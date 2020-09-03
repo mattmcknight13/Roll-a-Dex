@@ -29,7 +29,8 @@ The functionality will then be divided into two separate lists: MPV and PostMVP.
 
 - have Game Stats (Dex,Con,Int) randomly generated and/ or randomly applied using Standard array of Stats [15,14,13,12,10,8] have proper Modifiers applied
 
-- Once a Character is made through either means move to a page that shows the character sheet or docket
+- Once a Character is made through either means move to a page that shows the css styled character sheet or docket
+
 
 #### PostMVP  
 
@@ -40,6 +41,7 @@ The functionality will then be divided into two separate lists: MPV and PostMVP.
 - Default images based on some qualifier (race,sex,job)
 
 - Add quick or long form for auto generate 
+
 
 ## Project Schedule
 
