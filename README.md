@@ -44,6 +44,8 @@ You are **responsible** for scheduling time with your squad to seek approval for
 |  Day | Deliverable | Status
 |---|---| ---|
 |September 4| Project Approval | Incomplete
+|September 5|  | Incomplete
+|September 6| | Incomplete
 |September 7| Core Application Structure (HTML, CSS, etc.) | Incomplete
 |September 8| Pseudocode / actual code | Incomplete
 |September 9|  Initial Clickable Model  | Incomplete
