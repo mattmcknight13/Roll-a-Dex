@@ -12,15 +12,42 @@ Use this section to describe your final project and perhaps any links to relevan
 
 ## API and Data Sample
 
-Specify the API you are using and include a link. Show us a snippet of JSON returned by your API so we know you can access it and get the info you need
+Airtable Roll-a-Dex Tables 
+https://airtable.com/tblOof022T6PTf3Hk/viwFVsMWEzpyfku8U?blocks=hide
+```json
+
+ {
+    "records": [
+        {
+            "id": "rec5coA2QdS4oUCkM",
+            "fields": {
+                "Race": "Dwarf"
+            },
+            "createdTime": "2020-09-03T05:08:13.000Z"
+        },
+        {
+            "id": "recvcltX0sI9cNAwL",
+            "fields": {
+                "Race": "Dragonborn"
+            },
+            "createdTime": "2020-09-03T05:08:13.000Z"
+        },
+        {
+            "id": "rec6AooP4qCIHZkyH",
+            "fields": {
+                "Race": "Elf"
+            },
+            "createdTime": "2020-09-03T05:08:13.000Z"
+        }
+    ],
+    "offset": "rec6AooP4qCIHZkyH"
+}
+```
 
 ## Wireframes
 
 Upload images of your wireframes to an image hosting site or add them to an assets folder in your repo and link them here with a description of each specific wireframe.
 
-### MVP/PostMVP
-
-The functionality will then be divided into two separate lists: MPV and PostMVP.  Carefully decided what is placed into your MVP as the client will expect this functionality to be implemented upon project completion.  
 
 #### MVP 
 
