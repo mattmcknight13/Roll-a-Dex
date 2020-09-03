@@ -52,6 +52,7 @@ Upload images of your wireframes to an image hosting site or add them to an asse
 #### MVP 
 
 - Create a Button that randomly generates a NPC character
+
 - Create a form to Manually create some to all aspects of a NPC character traits to the API
 
 - have Game Stats (Dex,Con,Int) randomly generated and/ or randomly applied using Standard array of Stats [15,14,13,12,10,8] have proper Modifiers applied
@@ -62,20 +63,19 @@ Possible API database choices
 - Name
 - Race
 - Sex
-- Occupation and history
-- Appearance
-- Talent
-- Mannerism
-- Interactions with other
-- Useful Knowledge/Secret
+- Occupation/class
+- History/Useful Knowledge/Secret
 - Bond/Flaw/Ideals
 
 
 #### PostMVP  
 
+- Loading screen
+
 - Add functionality that makes sure anything in created traits are not already in list on database to avoide doubleling up.
 
 - Increase number of traits that can be chosen from
+
 
 - Default images based on some qualifier (race,sex,job)
 
@@ -86,10 +86,6 @@ Possible API database choices
 - Add local storage or pdf print options to keep character 
 
 ## Project Schedule
-
-This schedule will be used to keep track of your progress throughout the week and align with our expectations.  
-
-You are **responsible** for scheduling time with your squad to seek approval for each deliverable by the end of the corresponding day, excluding `Saturday` and `Sunday`.
 
 |  Day | Deliverable | Status
 |---|---| ---|
