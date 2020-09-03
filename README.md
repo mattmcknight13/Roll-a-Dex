@@ -23,17 +23,23 @@ Upload images of your wireframes to an image hosting site or add them to an asse
 The functionality will then be divided into two separate lists: MPV and PostMVP.  Carefully decided what is placed into your MVP as the client will expect this functionality to be implemented upon project completion.  
 
 #### MVP 
-*These are examples only. Replace with your own MVP features.*
 
-- Find and use external api 
-- Render data on page 
-- Allow user to choose favorites 
+- Create a Button that randomly generates a NPC character
+- Create a form to Manually create some to all aspects of a NPC character traits to the API
+
+- have Game Stats (Dex,Con,Int) randomly generated and/ or randomly applied using Standard array of Stats [15,14,13,12,10,8] have proper Modifiers applied
+
+- Once a Character is made through either means move to a page that shows the character sheet or docket
 
 #### PostMVP  
-*These are examples only. Replace with your own Post-MVP features.*
 
-- Add second API
-- Use local storage to save user favorites
+- Add functionality that makes sure anything in created traits are not already in list on database to avoide doubleling up.
+
+- Increase number of traits that can be chosen from
+
+- Default images based on some qualifier (race,sex,job)
+
+- Add quick or long form for auto generate 
 
 ## Project Schedule
 
