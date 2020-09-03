@@ -1,9 +1,10 @@
 
 # Project Overview
+Allow user to quickly build a NPC docket(character sheet), either by generating a random one, or by inputting specfic information, which will then be appended to the API to help increase options for later randomly generated characters
 
 ## Project Name
 
-The name of your project.
+Roll-a-Dex
 
 ## Project Description
 
@@ -42,13 +43,12 @@ You are **responsible** for scheduling time with your squad to seek approval for
 
 |  Day | Deliverable | Status
 |---|---| ---|
-|July 10-12| Prompt / Wireframes / Priority Matrix / Timeframes | Incomplete
-|July 13| Project Approval | Incomplete
-|July 13| Core Application Structure (HTML, CSS, etc.) | Incomplete
-|July 14| Pseudocode / actual code | Incomplete
-|July 15| Initial Clickable Model  | Incomplete
-|July 16| MVP | Incomplete
-|July 17| Presentations | Incomplete
+|September 4| Project Approval | Incomplete
+|September 7| Core Application Structure (HTML, CSS, etc.) | Incomplete
+|September 8| Pseudocode / actual code | Incomplete
+|September 9|  Initial Clickable Model  | Incomplete
+|September 10| MVP | Incomplete
+|September 11| Presentations | Incomplete
 
 ## Priority Matrix
 
