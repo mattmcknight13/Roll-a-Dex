@@ -31,6 +31,18 @@ The functionality will then be divided into two separate lists: MPV and PostMVP.
 
 - Once a Character is made through either means move to a page that shows the css styled character sheet or docket
 
+Possible API database choices
+- Name
+- Race
+- Sex
+- Occupation and history
+- Appearance
+- Talent
+- Mannerism
+- Interactions with other
+- Useful Knowledge/Secret
+- Bond/Flaw/Ideals
+
 
 #### PostMVP  
 
@@ -42,6 +54,9 @@ The functionality will then be divided into two separate lists: MPV and PostMVP.
 
 - Add quick or long form for auto generate 
 
+- Add rp suggestions (accent, mannerisme, personality buzz words)
+
+- Add local storage or pdf print options to keep character 
 
 ## Project Schedule
 
