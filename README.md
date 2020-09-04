@@ -89,9 +89,9 @@ Components
      - Curated Input Npc Form
          - Name input field
          - Race input field
-         - Sex input field
+         - Sex input field (optional)
          - Description input field
-         - Plot Hook input field
+         - Plot Hook input field (optional)
     - Generate Curated Npc Button
 
   - Character Sheet Page
