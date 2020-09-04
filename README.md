@@ -49,6 +49,36 @@ https://airtable.com/tblOof022T6PTf3Hk/viwFVsMWEzpyfku8U?blocks=hide
 Upload images of your wireframes to an image hosting site or add them to an assets folder in your repo and link them here with a description of each specific wireframe.
 
 
+
+### Component Heirarchy 
+
+
+
+###API
+
+I plan to access my Roll-a-dex api as shown above by reacthing the api at
+
+BASE_URL = https://api.airtable.com/v0/${process.env.REACT_APP_AIRTABLE_BASE}/ 
+
+with the keys 
+
+- race
+- firstname
+- lastname
+- occupation
+- appearance
+
+to be my five api calls, they will have to run 
+
+
+
+
+
+
+
+
+
+
 #### MVP 
 
 - Create a Button that randomly generates a NPC character
