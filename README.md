@@ -176,7 +176,7 @@ Threats
 
 |  Day | Deliverable | Status
 |---|---| ---|
-|September 4| Project Approval | Incomplete
+|September 4| Project Approval | Complete
 |September 5| psuedo code design begin code structure | Incomplete
 |September 6| reach api, render api| Incomplete
 |September 7| append to api | Incomplete
