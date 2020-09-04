@@ -78,7 +78,15 @@ Description:
 
 
 ### Component Heirarchy 
+Home page/NPC create/get page
+- Random Npc Button
+- input fields x 4
+- Curated Npc Button
+- Stat calculator
+  - modifier calculator
+  - passive senses calculator
 
+Character Sheet page
 
 
 ### API
@@ -129,23 +137,18 @@ table will be NPC and has a series of prebuilt characters currently which with a
 |  Day | Deliverable | Status
 |---|---| ---|
 |September 4| Project Approval | Incomplete
-|September 5|  | Incomplete
-|September 6| | Incomplete
-|September 7| Core Application Structure (HTML, CSS, etc.) | Incomplete
-|September 8| Pseudocode / actual code | Incomplete
-|September 9|  Initial Clickable Model  | Incomplete
-|September 10| MVP | Incomplete
+|September 5| psuedo code design begin code structure | Incomplete
+|September 6| reach api, render api| Incomplete
+|September 7| append to api | Incomplete
+|September 8| begin break up into components, css| Incomplete
+|September 9|  css, Initial Clickable Model, MVP, Post MVP  | Incomplete
+|September 10|  PostMVP | Incomplete
 |September 11| Presentations | Incomplete
 
 ## Priority Matrix
 
-Include a full list of features that have been prioritized based on the `Time and Importance` Matrix.  Link this image in a similar manner to your wireframes
 
 ## Timeframes
-
-Tell us how long you anticipate spending on each area of development. Be sure to consider how many hours a day you plan to be coding and how many days you have available until presentation day.
-
-Time frames are also key in the development cycle.  You have limited time to code all phases of the game.  Your estimates can then be used to evalute game possibilities based on time needed and the actual time you have before game must be submitted. It's always best to pad the time by a few hours so that you account for the unknown so add and additional hour or two to each component to play it safe. Throughout your project, keep track of your Time Invested and Actual Time and update your README regularly.
 
 | Component | Priority | Estimated Time | Time Invested | Actual Time |
 | --- | :---: |  :---: | :---: | :---: |
