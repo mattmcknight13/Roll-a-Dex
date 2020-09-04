@@ -54,17 +54,18 @@ https://airtable.com/tblOof022T6PTf3Hk/viwFVsMWEzpyfku8U?blocks=hide
 ```
 
 ## Wireframes
-![wireframe](https://imgur.com/1tVi3sy.png)
+![wireframe](https://imgur.com/TmhFqXt.png)
 
 Description:
-- Blue elements are headers/footers
-- Orange elements are hr breaks
-- Green elements are information populated by API and Input buttons
-- Stat blocks arae populated by random number generator 
-- Orange elements in stat blocks are modifier locations
+- Blue elements are headers
 - Red elements are buttons
-- Grey Bars are Input fields 
-- drop down for race selector 
+- field entry for appending and creating new npc
+- orange elements are decorative (might remove)
+- Boxes are for primary stats
+- cirlces for modifiers based off primary stats
+- senses box is pssive stats
+- and display fields
+
 
 
 ### Component Heirarchy 
@@ -77,34 +78,24 @@ I plan to access my Roll-a-dex api as shown above by reacthing the api at
 
 BASE_URL = https://api.airtable.com/v0/${process.env.REACT_APP_AIRTABLE_BASE}/ 
 
-with the keys 
+table will be NPC and has a series of prebuilt characters currently which with attributes such ass.
 
 - race
-- firstname
-- lastname
-- occupation
-- appearance
-
-to be my five api calls, they will have to run 
+- name
+- job
+- descriptor
+ 
 
 
 #### MVP 
 
-- Create a Button that randomly generates a NPC character
+- Create a Button that randomly generates a NPC character from API database of prebuilt and user built characters only stats will be generated randomly each time
 
-- Create a form to Manually create some to all aspects of a NPC character traits to the API
+- Create a form to Manually create a  NPC character do display and append to api
 
 - have Game Stats (Dex,Con,Int) randomly generated and/ or randomly applied using Standard array of Stats [15,14,13,12,10,8] have proper Modifiers applied
 
 - Once a Character is made through either means, generate data on a stylised character sheet on page
-
-Possible API database choices
-- First Name
-- Last Name
-- Race
-- Occupation/class
-- Appearance
-
 
 
 #### PostMVP  
