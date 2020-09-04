@@ -58,11 +58,11 @@ https://airtable.com/tblOof022T6PTf3Hk/viwFVsMWEzpyfku8U?blocks=hide
 
  Desktop/Tablet
 
-![wireframe](https://imgur.com/OQx0XYQ.png)
+![wireframe](https://imgur.com/edA0Hf0.png)
 
 Mobile view
 
-![wireframe](https://imgur.com/eaEaCfh.png)
+![wireframe](https://imgur.com/fJQy58C.png)
 
 * Sex was added will be appended to WireFrame 
 
