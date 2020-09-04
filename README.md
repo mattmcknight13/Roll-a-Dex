@@ -19,28 +19,37 @@ https://airtable.com/tblOof022T6PTf3Hk/viwFVsMWEzpyfku8U?blocks=hide
  {
     "records": [
         {
-            "id": "rec5coA2QdS4oUCkM",
+            "id": "recuJjyyDWiRqH8Cs",
             "fields": {
-                "Race": "Dwarf"
+                "Name": "Morticia Lindel",
+                "race": "Human",
+                "job": "Tavern Owner",
+                "descriptors": "long black hair, pale skin, serious demeanor\n"
             },
-            "createdTime": "2020-09-03T05:08:13.000Z"
+            "createdTime": "2020-09-03T21:08:08.000Z"
         },
         {
-            "id": "recvcltX0sI9cNAwL",
+            "id": "rec85czgEbtQdAgPS",
             "fields": {
-                "Race": "Dragonborn"
+                "race": "Elf",
+                "Name": "Daethana",
+                "job": "Woodcarver",
+                "descriptors": "short cut red hair, jovial\n"
             },
-            "createdTime": "2020-09-03T05:08:13.000Z"
+            "createdTime": "2020-09-03T21:08:08.000Z"
         },
         {
-            "id": "rec6AooP4qCIHZkyH",
+            "id": "recvVN2ik5VOi3WbD",
             "fields": {
-                "Race": "Elf"
+                "race": "Halfling",
+                "Name": "Korver",
+                "job": "Guildmaster",
+                "descriptors": "boisterous, and cunning "
             },
-            "createdTime": "2020-09-03T05:08:13.000Z"
+            "createdTime": "2020-09-03T21:08:08.000Z"
         }
     ],
-    "offset": "rec6AooP4qCIHZkyH"
+    "offset": "recvVN2ik5VOi3WbD"
 }
 ```
 
@@ -48,7 +57,7 @@ https://airtable.com/tblOof022T6PTf3Hk/viwFVsMWEzpyfku8U?blocks=hide
 ![wireframe](https://imgur.com/1tVi3sy.png)
 
 Description:
-- Blue elements are headers
+- Blue elements are headers/footers
 - Orange elements are hr breaks
 - Green elements are information populated by API and Input buttons
 - Stat blocks arae populated by random number generator 
