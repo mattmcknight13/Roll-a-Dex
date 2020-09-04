@@ -64,6 +64,7 @@ Mobile view
 
 ![wireframe](https://imgur.com/eaEaCfh.png)
 
+* Sex was added will be appended to WireFrame 
 
 Description:
 - Blue elements are headers
@@ -81,14 +82,30 @@ Description:
 Home page/NPC create/get page
 
 Components
-- Random Npc Button
-- input form (input x 5)
-- Curated Npc Button
-- Stat calculator
-  - modifier calculator
-  - passive senses calculator
 
-Character Sheet page
+- Roll-a-Dex 
+  - Home page 
+     - Generate Random NPC button
+     - Curated Input Npc Form
+         - Name input field
+         - Race input field
+         - Sex input field
+         - Description input field
+         - Plot Hook input field
+    - Generate Curated Npc Button
+
+  - Character Sheet Page
+     - Stats
+        - modifiers
+     - Senses
+     - Name
+     - Sex
+     - Race
+     - Occupation
+     - Description
+     - Plot Hook
+
+
 
 
 
