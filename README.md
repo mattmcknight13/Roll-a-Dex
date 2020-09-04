@@ -58,11 +58,11 @@ https://airtable.com/tblOof022T6PTf3Hk/viwFVsMWEzpyfku8U?blocks=hide
 
  Desktop/Tablet
 
-![wireframe](https://imgur.com/TmhFqXt.png)
+![wireframe](https://imgur.com/OQx0XYQ.png)
 
 Mobile view
 
-![wireframe](https://imgur.com/Gsbq2iA.png)
+![wireframe](https://imgur.com/eaEaCfh.png)
 
 
 Description:
@@ -89,6 +89,7 @@ Home page/NPC create/get page
 Character Sheet page
 
 
+
 ### API
 
 I plan to access my Roll-a-dex api as shown above by reacthing the api at
@@ -101,6 +102,7 @@ table will be NPC and has a series of prebuilt characters currently which with a
 - name
 - job
 - descriptor
+- plot hook
  
 
 
@@ -151,6 +153,7 @@ Oppurtunities - Working with api
 
 Threats
 - Api call limits
+- finding right break point for multiple entries of same info (ex. 500 Scanlan Shorthalt gnome bards)
 
 
 ## Project Schedule
