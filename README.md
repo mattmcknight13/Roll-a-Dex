@@ -47,6 +47,15 @@ https://airtable.com/tblOof022T6PTf3Hk/viwFVsMWEzpyfku8U?blocks=hide
 ## Wireframes
 ![wireframe](https://imgur.com/1tVi3sy.png)
 
+Description:
+- Blue elements are headers
+- Orange elements are hr breaks
+- Green elements are information populated by API and Input buttons
+- Stat blocks arae populated by random number generator 
+- Orange elements in stat blocks are modifier locations
+- Red elements are buttons
+- Grey Bars are Input fields 
+- drop down for race selector 
 
 
 ### Component Heirarchy 
