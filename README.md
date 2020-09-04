@@ -4,7 +4,7 @@ Allow user to quickly build a NPC docket(character sheet), either by generating 
 
 ## Project Name
 
-Roll-a-Dex
+Roll-a-Dex NPC Generator
 
 ## Project Description
 
@@ -110,10 +110,6 @@ Components
 
 
 ### API
-
-I plan to access my Roll-a-dex api as shown above by reacthing the api at
-
-BASE_URL = https://api.airtable.com/v0/${process.env.REACT_APP_AIRTABLE_BASE}/ 
 
 table will be NPC and has a series of prebuilt characters currently which with attributes such ass.
 
