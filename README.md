@@ -53,8 +53,17 @@ https://airtable.com/tblOof022T6PTf3Hk/viwFVsMWEzpyfku8U?blocks=hide
 }
 ```
 
+
 ## Wireframes
+
+ Desktop/Tablet
+
 ![wireframe](https://imgur.com/TmhFqXt.png)
+
+Mobile view
+
+![wireframe](https://imgur.com/Gsbq2iA.png)
+
 
 Description:
 - Blue elements are headers
