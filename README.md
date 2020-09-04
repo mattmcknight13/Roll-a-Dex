@@ -118,6 +118,7 @@ BASE_URL = https://api.airtable.com/v0/${process.env.REACT_APP_AIRTABLE_BASE}/
 table will be NPC and has a series of prebuilt characters currently which with attributes such ass.
 
 - race
+- sex 
 - name
 - job
 - descriptor
