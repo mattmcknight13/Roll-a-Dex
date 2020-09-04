@@ -45,8 +45,7 @@ https://airtable.com/tblOof022T6PTf3Hk/viwFVsMWEzpyfku8U?blocks=hide
 ```
 
 ## Wireframes
-
-Upload images of your wireframes to an image hosting site or add them to an assets folder in your repo and link them here with a description of each specific wireframe.
+![wireframe](https://imgur.com/1tVi3sy.png)
 
 
 
@@ -71,14 +70,6 @@ with the keys
 to be my five api calls, they will have to run 
 
 
-
-
-
-
-
-
-
-
 #### MVP 
 
 - Create a Button that randomly generates a NPC character
@@ -87,15 +78,15 @@ to be my five api calls, they will have to run
 
 - have Game Stats (Dex,Con,Int) randomly generated and/ or randomly applied using Standard array of Stats [15,14,13,12,10,8] have proper Modifiers applied
 
-- Once a Character is made through either means move to a page that shows the css styled character sheet or docket
+- Once a Character is made through either means, generate data on a stylised character sheet on page
 
 Possible API database choices
-- Name
+- First Name
+- Last Name
 - Race
-- Sex
 - Occupation/class
-- History/Useful Knowledge/Secret
-- Bond/Flaw/Ideals
+- Appearance
+
 
 
 #### PostMVP  
