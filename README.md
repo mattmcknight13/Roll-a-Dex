@@ -8,7 +8,7 @@ Roll-a-Dex
 
 ## Project Description
 
-Use this section to describe your final project and perhaps any links to relevant sites that help convey the concept and\or functionality.
+Want to create a growing list of Non Player Characters that users can use to quickly get a npc or create a specific outliine for and append that outline to the api database so others can have a chance to get it as well.
 
 ## API and Data Sample
 
@@ -131,6 +131,27 @@ table will be NPC and has a series of prebuilt characters currently which with a
 - Add rp suggestions (accent, mannerisme, personality buzz words)
 
 - Add local storage or pdf print options to keep character 
+
+
+## SWOT
+
+Strengths 
+- able to remain calm in stressful situations
+- adapt previous work to fit new ideas
+- js 
+
+Weakness 
+- Css
+- Ux design
+
+
+Oppurtunities - Working with api
+- reach out ot a UX student
+- reasearch website design...i know there are some recommended reading on the matter
+
+Threats
+- Api call limits
+
 
 ## Project Schedule
 
