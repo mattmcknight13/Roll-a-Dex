@@ -79,8 +79,10 @@ Description:
 
 ### Component Heirarchy 
 Home page/NPC create/get page
+
+Components
 - Random Npc Button
-- input fields x 4
+- input form (input x 5)
 - Curated Npc Button
 - Stat calculator
   - modifier calculator
