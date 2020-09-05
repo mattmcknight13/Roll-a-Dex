@@ -1,16 +1,17 @@
-import React from "react";
-import GetNpc from "./GetNpc";
-import Sheet from "./Sheet";
+// import React from "react";
+// import GetNpc from "./GetNpc";
+// import Sheet from "./Sheet";
 
-const RandomButton = () => {
-  return (
-    <div>
-      <button>Generate a Random NPC</button>
-    </div>
-  );
-};
+// const RandomButton = () => {
+//   return (
+//     <div>
+//       <button onClick={() => makeApiCall()} >Generate a Random NPC</button>
+       
+//     </div>
+//   );
+// };
 
-export default RandomButton;
+// export default RandomButton;
 
 // Need to create a button that when clicked calls makeApiCall Routes you to character sheet page
 // makeApiCall();

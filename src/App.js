@@ -1,7 +1,7 @@
 import React from "react";
 import { Route, Switch } from "react-router-dom";
 import Form from "./components/Form";
-import RandomButton from "./components/RandomButton";
+// import RandomButton from "./components/RandomButton";
 import CuratedButton from "./components/CuratedButton";
 import GetNpc from "./components/GetNpc";
 
@@ -14,10 +14,10 @@ function App() {
       <main>
         <Switch>
           <Route>
-            <RandomButton />
+            <GetNpc />
+            {/* <RandomButton /> */}
             <Form />
             <CuratedButton />
-            <GetNpc />
           </Route>
         </Switch>
       </main>

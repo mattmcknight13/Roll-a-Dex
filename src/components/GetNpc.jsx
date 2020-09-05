@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+// import RandomButton from "./RandomButton";
 
 //get call
 const GetNpc = () => {
@@ -26,13 +27,20 @@ const GetNpc = () => {
 
   return (
     <div className="randomnpc">
-      {npc.map((npc, idx) => (
-        <p className={key[idx]} key={idx}>
-          {npc}
-        </p>
-      ))}
+      <>
+        <button>Generate Random Button</button>
+        {npc.map((npc, idx) => (
+          <p className={key[idx]} key={idx}>
+            {npc}
+          </p>
+        ))}
+      </>
     </div>
   );
 };
 
 export default GetNpc;
+
+// Need to create a button that when clicked calls makeApiCall Routes you to character sheet page
+// makeApiCall();
+// render information to  character sheet
