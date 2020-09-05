@@ -86,6 +86,7 @@ Components
 - Roll-a-Dex 
   - Home page 
      - Generate Random NPC button
+         - Random Stat Generator
      - Curated Input Npc Form
          - Name input field
          - Race input field
@@ -93,6 +94,7 @@ Components
          - Description input field
          - Plot Hook input field (optional)
     - Generate Curated Npc Button
+         - Random Stat Generator
 
   - Character Sheet Page
      - Stats
