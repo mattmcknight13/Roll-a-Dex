@@ -1,11 +1,12 @@
 import React from 'react';
 
-const Sheet = () => {
+
+function Sheet(props) {
   return (
     <div>
       
     </div>
   );
-};
+}
 
 export default Sheet;

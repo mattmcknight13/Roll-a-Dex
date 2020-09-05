@@ -6,8 +6,6 @@ const GetNpc = () => {
   const [npc, setNpc] = useState([]);
   const [key, setKey] = useState([]);
 
-  
-
   useEffect(() => {
     const makeApiCall = async () => {
       const airtableURL = `https://api.airtable.com/v0/${process.env.REACT_APP_AIRTABLE_BASE}/npc`;
@@ -29,7 +27,7 @@ const GetNpc = () => {
   return (
     <div className="randomnpc">
       {npc.map((npc, idx) => (
-        <p className={key} key={idx}>
+        <p className={key[idx]} key={idx}>
           {npc}
         </p>
       ))}
@@ -38,7 +36,3 @@ const GetNpc = () => {
 };
 
 export default GetNpc;
-
-// Need to create a button that when clicked calls makeApiCall Routes you to character sheet page
-// render information to  character sheet
-// assign a loop to give each made p tag a class name for styling and placement to be only 1 not all keys

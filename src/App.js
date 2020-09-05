@@ -1,29 +1,30 @@
 import React from "react";
 import { Route, Switch } from "react-router-dom";
-import GetNpc from "./components/GetNpc";
-
+import Form from "./components/Form";
+import RandomButton from "./components/RandomButton";
+import CuratedButton from "./components/CuratedButton";
 
 function App() {
   return (
     <div>
-      <header></header>
+      <header>
+        <h1>Roll-a-Dex NPC Generator</h1>
+      </header>
       <main>
         <Switch>
           <Route>
-            <GetNpc />
+            <RandomButton />
+            <Form />
+            <CuratedButton />
           </Route>
         </Switch>
       </main>
+      <footer></footer>
     </div>
   );
 }
 
 export default App;
-
-
-
-
-
 
 // Pesudo code
 
