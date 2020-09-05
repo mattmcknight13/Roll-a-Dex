@@ -1,9 +1,10 @@
 import React from "react";
-import { Link ,Route, Switch } from "react-router-dom";
+import { Link, Route, Switch } from "react-router-dom";
 import Form from "./components/Form";
-import Sheet from './components/Sheet'
+import Sheet from "./components/Sheet";
 
 import GetNpc from "./components/GetNpc";
+import RandomButton from "./components/RandomButton";
 
 function App() {
   return (
@@ -12,17 +13,18 @@ function App() {
         <h1>Roll-a-Dex NPC Generator</h1>
       </header>
       <nav>
-        <Link to='/'>Create NPC</Link>
-        <Link to='/sheet'>Character Sheet</Link>
+        <Link to="/">Create NPC</Link>
+        <Link to="/sheet">Character Sheet</Link>
       </nav>
       <main>
         <Switch>
-          <Route exact path='/'>
-            <GetNpc />
-            <Form/>
+          <Route exact path="/">
+            {/* <GetNpc /> */}
+            <RandomButton />
+            <Form />
           </Route>
           <Route path="/sheet">
-            <Sheet/>
+            <Sheet />
           </Route>
         </Switch>
       </main>

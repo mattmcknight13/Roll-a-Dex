@@ -1,9 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import RandomButton from "./RandomButton";
-import { Route } from "react-router-dom";
-
-
+import { Route, Link } from "react-router-dom";
 
 //get call
 const GetNpc = () => {
@@ -11,7 +9,6 @@ const GetNpc = () => {
   const [key, setKey] = useState([]);
 
   useEffect(() => {
-   
     makeApiCall();
   }, []);
 
@@ -30,13 +27,12 @@ const GetNpc = () => {
     setNpc(npcValues);
   };
 
-
   return (
     <div className="randomnpc">
       <>
         <Route path="/">
           <RandomButton getRandomNpc={makeApiCall} />
-          </Route>
+        </Route>
         {npc.map((npc, idx) => (
           <p className={key[idx]} key={idx}>
             {npc}
@@ -48,6 +44,5 @@ const GetNpc = () => {
 };
 
 export default GetNpc;
-
 
 // render information to  character sheet
