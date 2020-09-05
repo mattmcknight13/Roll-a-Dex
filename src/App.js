@@ -3,6 +3,7 @@ import { Route, Switch } from "react-router-dom";
 import Form from "./components/Form";
 import RandomButton from "./components/RandomButton";
 import CuratedButton from "./components/CuratedButton";
+import GetNpc from "./components/GetNpc";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
             <RandomButton />
             <Form />
             <CuratedButton />
+            <GetNpc />
           </Route>
         </Switch>
       </main>

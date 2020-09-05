@@ -1,11 +1,11 @@
-import React from 'react';
-import Form from './Form'
-import Sheet from './Sheet'
+import React from "react";
+import Form from "./Form";
+import Sheet from "./Sheet";
 
 function CuratedButton(props) {
   return (
     <div>
-     <button>Generate Curated NPC</button>
+      <button>Generate Curated NPC</button>
     </div>
   );
 }
