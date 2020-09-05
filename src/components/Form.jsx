@@ -19,6 +19,9 @@ function Form() {
         <div>
           <input placeholder="Enter Plot Hook"></input>
         </div>
+        <div>
+          <button>Generate curated NPC</button>
+        </div>
       </form>
     </div>
   );
