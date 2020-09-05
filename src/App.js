@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from "react";
-import { Link, Route, Switch } from "react-router-dom";
+import React from "react";
+import { Route, Switch } from "react-router-dom";
 import GetNpc from "./components/GetNpc";
-import axios from "axios";
+
 
 function App() {
   return (

@@ -1,33 +1,43 @@
 import React, {useEffect, useState} from 'react'
 import axios from 'axios'
-import { Link } from "react-router-dom";
 
 
-function GetNpc() {
-  //get call
-  const [movieData, setMovieData] = useState({});
-  const [newSearch, setNewSearch] = useState("star wars");
+//get call
+const  GetNpc = () => {
+  
+  
+  const [npc, setNpc] = useState([]);
+  
 
   useEffect(() => {
-    const airtableURL = `https://api.airtable.com/v0/${process.env.REACT_APP_AIRTABLE_BASE}/npc`;
-
+  
     const makeApiCall = async () => {
+      const airtableURL = `https://api.airtable.com/v0/${process.env.REACT_APP_AIRTABLE_BASE}/npc`;
       const res = await axios.get(airtableURL, {
         headers: {
           Authorization: `Bearer ${process.env.REACT_APP_AIRTABLE_KEY}`,
         },
       });
-      setMovieData(res.data);
-      console.log(res.data.records[1].fields);
+      let arr = res.data.records
+      let i = Math.floor(Math.random() * arr.length)
+      let npcStats = Object.values(res.data.records[i].fields)
+      setNpc(npcStats);
+      console.log(arr);
     };
     makeApiCall();
-  }, [newSearch]);
+  }, []);
 
   return (
     <div className="randomnpc">
-        
+      <p>API information</p>
+      {npc.map((npc, idx) => <p key={idx}>{npc}</p>)}
   </div>
   )
 }
 
 export default GetNpc;
+
+
+
+// Need to create a random number generator that knows 
+// length of api array and pulls from api to display randomly selected npc
