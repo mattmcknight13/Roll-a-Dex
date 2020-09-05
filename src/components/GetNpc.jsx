@@ -1,16 +1,14 @@
-import React, {useEffect, useState} from 'react'
-import axios from 'axios'
-
+import React, { useEffect, useState } from "react";
+import axios from "axios";
 
 //get call
-const  GetNpc = () => {
-  
-  
+const GetNpc = () => {
   const [npc, setNpc] = useState([]);
+  const [key, setKey] = useState([]);
+
   
 
   useEffect(() => {
-  
     const makeApiCall = async () => {
       const airtableURL = `https://api.airtable.com/v0/${process.env.REACT_APP_AIRTABLE_BASE}/npc`;
       const res = await axios.get(airtableURL, {
@@ -18,26 +16,29 @@ const  GetNpc = () => {
           Authorization: `Bearer ${process.env.REACT_APP_AIRTABLE_KEY}`,
         },
       });
-      let arr = res.data.records
-      let i = Math.floor(Math.random() * arr.length)
-      let npcStats = Object.values(res.data.records[i].fields)
-      setNpc(npcStats);
-      console.log(arr);
+      let arr = res.data.records;
+      let i = Math.floor(Math.random() * arr.length);
+      let npcKeys = Object.keys(res.data.records[i].fields);
+      let npcValues = Object.values(res.data.records[i].fields);
+      setKey(npcKeys);
+      setNpc(npcValues);
     };
     makeApiCall();
   }, []);
 
   return (
     <div className="randomnpc">
-      <p>API information</p>
-      {npc.map((npc, idx) => <p key={idx}>{npc}</p>)}
-  </div>
-  )
-}
+      {npc.map((npc, idx) => (
+        <p className={key} key={idx}>
+          {npc}
+        </p>
+      ))}
+    </div>
+  );
+};
 
 export default GetNpc;
 
-
-
-// Need to create a random number generator that knows 
-// length of api array and pulls from api to display randomly selected npc
+// Need to create a button that when clicked calls makeApiCall Routes you to character sheet page
+// render information to  character sheet
+// assign a loop to give each made p tag a class name for styling and placement to be only 1 not all keys
