@@ -2,13 +2,15 @@ import React, { useState } from "react";
 import axios from "axios";
 
 function Form() {
+  // use states set current and append information to api
   const [name, setName] = useState("");
   const [race, setRace] = useState("");
   const [sex, setSex] = useState("");
   const [job, setJob] = useState("");
   const [description, setDescription] = useState("");
   const [hook, setHook] = useState("");
-
+  
+  // onsubmit organizes info into object to be sent to api
   const handleSubmit = async (e) => {
     e.preventDefault();
     const fields = {
@@ -19,6 +21,7 @@ function Form() {
       description,
       hook,
     };
+    // api call posts new fields object to api database
     const airtableURL = `https://api.airtable.com/v0/${process.env.REACT_APP_AIRTABLE_BASE}/npc`;
     console.log(fields);
     // await axios.post(url, data, options (headers))
@@ -32,6 +35,7 @@ function Form() {
         },
       }
     );
+    // resets state to empty field
     setName("");
     setRace("");
     setJob("");
