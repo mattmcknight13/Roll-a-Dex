@@ -72,7 +72,7 @@ function Form() {
           <input name="hook" type="text" value={hook} onChange={(e) => setHook(e.target.value)} ></input>
         </div>
         <div>
-          <button type="submit">Generate curated NPC</button>
+          <button type="submit">Generate Created NPC</button>
         </div>
       </form>
     </div>

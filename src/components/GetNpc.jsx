@@ -32,7 +32,7 @@ const GetNpc = () => {
       <>
         <Route path="/">
           <RandomButton getRandomNpc={makeApiCall} />
-        </Route>
+        </Route >
         {npc.map((npc, idx) => (
           <p className={key[idx]} key={idx}>
             {npc}
@@ -46,3 +46,12 @@ const GetNpc = () => {
 export default GetNpc;
 
 // render information to  character sheet
+
+
+
+// KNOWN ISSUES"
+/*
+Form page does not display or move data to character sheet page
+GetNpc info is rendering on refresh and showing up before button call
+randombutton is not sending getNpc data to character sheet for rendering
+*/
