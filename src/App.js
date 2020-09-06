@@ -19,8 +19,8 @@ function App() {
       <main>
         <Switch>
           <Route exact path="/">
-            {/* <GetNpc /> */}
-            <RandomButton />
+            <GetNpc />
+            {/* <RandomButton /> */}
             <Form />
           </Route>
           <Route path="/sheet">
