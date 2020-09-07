@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import RandomButton from "./RandomButton";
-import { Route, Link } from "react-router-dom";
+import { Route } from "react-router-dom";
 
 //get call
-const GetNpc = () => {
+const GetNpc = (props) => {
   const [npc, setNpc] = useState([]);
   const [key, setKey] = useState([]);
 

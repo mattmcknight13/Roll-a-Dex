@@ -25,7 +25,7 @@ function Form() {
     const airtableURL = `https://api.airtable.com/v0/${process.env.REACT_APP_AIRTABLE_BASE}/npc`;
     console.log(fields);
     // await axios.post(url, data, options (headers))
-    const res = await axios.post(
+    await axios.post(
       airtableURL,
       { fields },
       {

@@ -4,7 +4,7 @@ import Form from "./components/Form";
 import Sheet from "./components/Sheet";
 
 import GetNpc from "./components/GetNpc";
-// import RandomButton from "./components/RandomButton";
+import RandomButton from "./components/RandomButton";
 
 function App() {
   return (
@@ -19,13 +19,13 @@ function App() {
       <main>
         <Switch>
           <Route exact path="/">
-            <GetNpc />
-            {/* <RandomButton /> */}
+            <RandomButton />
             <h3>Create a NPC</h3>
             <Form />
           </Route>
           <Route path="/sheet">
             <Sheet />
+            <GetNpc/>
           </Route>
         </Switch>
       </main>
