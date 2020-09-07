@@ -9,7 +9,7 @@ function Form() {
   const [job, setJob] = useState("");
   const [description, setDescription] = useState("");
   const [hook, setHook] = useState("");
-  
+
   // onsubmit organizes info into object to be sent to api
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -39,37 +39,67 @@ function Form() {
     setName("");
     setRace("");
     setJob("");
-    setSex("")
-    setDescription("")
-    setHook("")
+    setSex("");
+    setDescription("");
+    setHook("");
   };
 
   return (
     <div>
-      <form onSubmit={handleSubmit}>
+      <form  onSubmit={handleSubmit}>
         <div>
-          <label htmlFor="name">Enter Name</label>
-          <input name="name" type="text" value={name} onChange={(e) => setName(e.target.value)} ></input>
+          <input
+            name="name"
+            type="text"
+            placeholder="Enter Name"
+            value={name}
+            onChange={(e) => setName(e.target.value)}
+          ></input>
         </div>
         <div>
-          <label htmlFor="race">Enter Race</label>
-          <input name="race" type="text" value={race} onChange={(e) => setRace(e.target.value)} ></input>
+          <input
+            name="race"
+            type="text"
+            placeholder="Enter Race"
+            value={race}
+            onChange={(e) => setRace(e.target.value)}
+          ></input>
         </div>
         <div>
-          <label htmlFor="sex">Enter sex</label>
-          <input name="sex" type="text" value={sex} onChange={(e) => setSex(e.target.value)} ></input>
+          <input
+            name="sex"
+            type="text"
+            placeholder="Enter Sex"
+            value={sex}
+            onChange={(e) => setSex(e.target.value)}
+          ></input>
         </div>
         <div>
-          <label htmlFor="job">Enter Occupation/Class</label>
-          <input name="job" type="text" value={job} onChange={(e) => setJob(e.target.value)} ></input>
+          <input
+            name="job"
+            type="text"
+            placeholder="Enter Job/Class"
+            value={job}
+            onChange={(e) => setJob(e.target.value)}
+          ></input>
         </div>
         <div>
-          <label htmlFor="description">Enter Description</label>
-          <input name="description" type="text" value={description} onChange={(e) => setDescription(e.target.value)} ></input>
+          <input
+            name="description"
+            type="text"
+            placeholder="Enter Description"
+            value={description}
+            onChange={(e) => setDescription(e.target.value)}
+          ></input>
         </div>
         <div>
-          <label htmlFor="hook">Enter Plot Hook</label>
-          <input name="hook" type="text" value={hook} onChange={(e) => setHook(e.target.value)} ></input>
+          <input
+            name="hook"
+            type="text"
+            placeholder="Enter Story hook"
+            value={hook}
+            onChange={(e) => setHook(e.target.value)}
+          ></input>
         </div>
         <div>
           <button type="submit">Generate Created NPC</button>

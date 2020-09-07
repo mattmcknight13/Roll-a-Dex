@@ -2,9 +2,9 @@ import React from "react";
 import { Link, Route, Switch } from "react-router-dom";
 import Form from "./components/Form";
 import Sheet from "./components/Sheet";
-
 import GetNpc from "./components/GetNpc";
 import RandomButton from "./components/RandomButton";
+import Stat from "./components/Stats";
 
 function App() {
   return (
@@ -21,11 +21,12 @@ function App() {
           <Route exact path="/">
             <RandomButton />
             <h3>Create a NPC</h3>
-            <Form />
+            <Form onSubmit="/sheet" />
           </Route>
           <Route path="/sheet">
             <Sheet />
-            <GetNpc/>
+            <Stat />
+            <GetNpc />
           </Route>
         </Switch>
       </main>
@@ -35,6 +36,23 @@ function App() {
 }
 
 export default App;
+
+// KNOWN ISSUES"
+/*
+Order of importance
+1. Buttons not conditional rendering information or sending it to correct page so (component tree)(will change how others are handled so key to solve)
+2. grabbing api data for curated npc
+3. stats logic
+
+
+- Form page does not display or move data to character sheet page
+- GetNpc info is rendering on refresh and showing up before button call
+- Randombutton is not sending getNpc data to character sheet for rendering
+- Curated Npc is not rendering to the page after creation but is being appended to api
+- Stats logic
+- Current information that does appear on character sheet page, re runs on refresh or page leave, and reenter
+- Need to send props up to App.js and down to Form.jsx to be able to grab curated npc to render it 
+*/
 
 // Pesudo code
 
@@ -53,16 +71,6 @@ Random Number Generator 1 - will be for generating random number to attach to ar
 
 Random number generator 2- creates stat array and assigns numbers, runs each through a switch statement to provide modifier and quick provides passive senses 
 
-
-
-
 */
 
-/*
-BASE_URL = https://api.airtable.com/v0/${process.env.REACT_APP_AIRTABLE_BASE}/npc  - gives list of all npc in database
-res.data.records[i] to select random npc from array
 
-
-
-Rescources to look at, Fry-lyfe, Audubon
-*/

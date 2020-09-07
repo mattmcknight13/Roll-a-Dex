@@ -2,16 +2,28 @@ import React from "react";
 
 function Stats() {
   
- 
+  
   const Stat = () => {
+    let stat = []
     let min = 6;
     let max = 18;
-    let stat = min + Math.floor(Math.random() * (max - min + 1));
+    for (let i = 6; i > 1; i--){
+      stat = min + Math.floor(Math.random() * (max - min + 1));
+      console.log(stat)
+    }
     return stat
+   
+   
+    // let modifer = 
   };
-  Stat();
+ 
   
-  return <div></div>;
+  return (
+    <div>
+      <h4>{Stat()}</h4>
+     
+    </div>
+  )
 }
 
 export default Stats;
