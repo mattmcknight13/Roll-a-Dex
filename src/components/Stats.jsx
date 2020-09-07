@@ -1,29 +1,24 @@
 import React from "react";
 
 function Stats() {
-  
-  
   const Stat = () => {
-    let stat = []
+    let stat = [];
     let min = 6;
     let max = 18;
-    for (let i = 6; i > 1; i--){
-      stat = min + Math.floor(Math.random() * (max - min + 1));
-      console.log(stat)
-    }
-    return stat
-   
-   
-    // let modifer = 
+    for (let i = 6; i > 0; i--) {
+      stat.push( min + Math.floor(Math.random() * (max - min + 1)));
+      console.log(stat);
+      // return stat;
+    }  
   };
- 
   
+
   return (
     <div>
-      <h4>{Stat()}</h4>
+      <h4>Dex {Stat()}</h4>
      
     </div>
-  )
+  );
 }
 
 export default Stats;

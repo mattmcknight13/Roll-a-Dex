@@ -1,4 +1,5 @@
 import React from "react";
+// import Stats from './Stats'
 
 
 const RandomButton = (props) => {
