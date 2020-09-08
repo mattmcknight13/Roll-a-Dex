@@ -23,13 +23,17 @@ function Form(props) {
       description,
       hook,
     };
-    console.log(fields)
-    // api call posts new fields object to api database
+    console.log(fields);
+    // create varaible to assign api endpoint
     const airtableURL = `https://api.airtable.com/v0/${process.env.REACT_APP_AIRTABLE_BASE}/npc`;
+    // make axios post call
     await axios.post(
+      // endpoint
       airtableURL,
+      // destructure fields object to be turn into json
       { fields },
       {
+        // provide authorizatioin
         headers: {
           Authorization: `Bearer ${process.env.REACT_APP_AIRTABLE_KEY}`,
           "Content-Type": "application/json",
@@ -48,6 +52,7 @@ function Form(props) {
 
   return (
     <div>
+      {/* trigger handleSubmit function */}
       <form onSubmit={handleSubmit}>
         <div>
           <input
@@ -113,7 +118,5 @@ function Form(props) {
 
 export default Form;
 
-
-
-// thoughts: (most likely wrong) looks like i need to grab the handlesubmit object i 
+// thoughts: (most likely wrong) looks like i need to grab the handlesubmit object i
 // create before api call happens and lift it to app.js then down to getnpc map for render, but how ?!?!?!?!?!?!

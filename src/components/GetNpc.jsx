@@ -1,21 +1,21 @@
-import React, { useState } from "react";
-import axios from "axios";
+import React from "react";
 import RandomButton from "./RandomButton";
-import { Route } from "react-router-dom";
 
 //get call
+// initate GetNpc function
 const GetNpc = (props) => {
+  // destructure props object
   const { npcKey, npc, getRandomNpc } = props;
-
-
 
   return (
     <div className="randomnpc">
       <>
+        {/* have button trigger api call on click */}
         <RandomButton getRandomNpc={getRandomNpc} />
+        {/* map through selected object to give key values to be classname, and assign values to approriate p tag */}
         {npc.map((n, idx) => (
           <p className={npcKey[idx]} key={idx}>
-            {n}
+           {npcKey[idx]}: {n}
           </p>
         ))}
       </>

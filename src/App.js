@@ -3,29 +3,35 @@ import { Link, Route, Switch } from "react-router-dom";
 import Form from "./components/Form";
 import Sheet from "./components/Sheet";
 import GetNpc from "./components/GetNpc";
-import RandomButton from "./components/RandomButton";
 import Stat from "./components/Stats";
-import axios from 'axios'
+import axios from "axios";
 
 function App(props) {
-
+  // set default useStates for my npc value and npc keys
   const [npc, setNpc] = useState([]);
   const [npcKey, setNpcKey] = useState([]);
-  
-  useEffect(() => { 
-    makeApiCall()
-  }, [])
-  
 
+  // Triggers Get api call on first load
+  useEffect(() => {
+    makeApiCall();
+  }, []);
+
+  // create async function to make api call
   const makeApiCall = async () => {
+    // create variable to assign airtable url to
     const airtableURL = `https://api.airtable.com/v0/${process.env.REACT_APP_AIRTABLE_BASE}/npc`;
+    // make axios.get call
     const res = await axios.get(airtableURL, {
+      // provide api key
       headers: {
         Authorization: `Bearer ${process.env.REACT_APP_AIRTABLE_KEY}`,
       },
     });
+    // create variable to store json object array
     let arr = res.data.records;
+    // create a varaible i and have it be a random number based on length of api array
     let i = Math.floor(Math.random() * arr.length);
+    // randomly select one api call based on i
     let npcKeys = Object.keys(arr[i].fields);
     let npcValues = Object.values(arr[i].fields);
     setNpcKey(npcKeys);
@@ -40,19 +46,20 @@ function App(props) {
       <nav>
         <Link to="/">Create NPC</Link>
         <Link to="/sheet"> Random Npc</Link>
-        
       </nav>
       <main>
         <Switch>
           <Route exact path="/">
-            {/* <RandomButton getRandomNpc={makeApiCall} /> */}
             <h3>Create a NPC</h3>
+            {/* pass down props to Form */}
             <Form onSubmit="/sheet" npc={props.npc} setNpc={props.setNpc} />
           </Route>
           <Route path="/sheet">
             <Sheet />
-            <GetNpc npc={npc} npcKey={npcKey} getRandomNpc={makeApiCall} />
             <Stat />
+            {/* pass down  props to GetNpc */}
+            <GetNpc npc={npc} npcKey={npcKey} getRandomNpc={makeApiCall} />
+            
           </Route>
         </Switch>
       </main>
