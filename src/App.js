@@ -10,6 +10,8 @@ function App(props) {
   // set default useStates for my npc value and npc keys
   const [npc, setNpc] = useState([]);
   const [npcKey, setNpcKey] = useState([]);
+  // pulls set state of creat npc form
+  const [npcInfo, setNpcInfo] = useState({});
 
   // Triggers Get api call on first load
   useEffect(() => {
@@ -37,33 +39,66 @@ function App(props) {
     setNpcKey(npcKeys);
     setNpc(npcValues);
   };
-  // const [npcFunction, setNpcFunction] = useState(callback => {callback})
+ 
+
+
+  const bodyStyle = {
+    // backgroundColor: 'linen'
+  }
+  const headerStyle = {
+    textAlign: 'center',
+    backgroundColor: 'skyBlue'
+  }
+  const navStyle = {
+    color: 'blue',
+    display: 'flex',
+    textAlign: 'center',
+    justifyContent: 'space-around',
+    textDecoration: 'none',
+    textDexorationLine: 'none' 
+  }
+  const mainStyle = {
+    textAlign: 'center',
+    backgroundColor: 'linen'
+  }
+
+  const footerStyle = {
+    backgroundColor: 'skyBlue',
+    height: 100
+  }
+  
+
   return (
-    <div>
-      <header>
+    <div style={bodyStyle}>
+      <header style={headerStyle} >
         <h1>Roll-a-Dex NPC Generator</h1>
-      </header>
-      <nav>
-        <Link to="/">Create NPC</Link>
+        <nav style={navStyle}>
+        <Link  to="/">Create NPC</Link>
         <Link to="/sheet"> Random Npc</Link>
       </nav>
-      <main>
+      </header>
+      
+      <main style={mainStyle}>
         <Switch>
           <Route exact path="/">
             <h3>Create a NPC</h3>
-            {/* pass down props to Form */}
-            <Form onSubmit="/sheet" npc={props.npc} setNpc={props.setNpc} />
+            {/* pass down props/state to Form */}
+            <Form
+              onSubmit="/sheet"
+              npc={props.npc}
+              setNpc={props.setNpc}
+              setNpcInfo={setNpcInfo}
+            />
           </Route>
           <Route path="/sheet">
-            <Sheet />
+            <Sheet npcInfo={npcInfo} />
             <Stat />
-            {/* pass down  props to GetNpc */}
+            {/* pass down  props/state to GetNpc */}
             <GetNpc npc={npc} npcKey={npcKey} getRandomNpc={makeApiCall} />
-            
           </Route>
         </Switch>
       </main>
-      <footer></footer>
+      <footer style={footerStyle}></footer>
     </div>
   );
 }

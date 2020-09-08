@@ -1,7 +1,9 @@
-import React from "react";
-import { findByLabelText } from "@testing-library/react";
+import React, { useState, useEffect } from "react";
+
 
 function Stats() {
+
+  
   let stat = [];
   let min = 6;
   let max = 18;
@@ -16,27 +18,25 @@ function Stats() {
 
   const style = {
     display: 'flex',
+    justifyContent: 'center'
   }
 
   const statStyle = {
-    margin: 40
+    margin: 100,
+    border: 'solid green',
+    padding: 20
   }
 
   return (
    
     <div style={style}>
-      <h4 style={statStyle} >Dex </h4>
-      <h5 style={statStyle}>{Stat()}</h5>
-      <h4 style={statStyle}>Str </h4 >
-      <h5 style={statStyle}>{Stat()}</h5>
-      <h4 style={statStyle}>Con  </h4>
-      <h5 style={statStyle}>{Stat ()}</h5>
-      <h4 style={statStyle}>Int </ h4>
-      <h5 style={statStyle}>{Stat() }</h5>
-      <h4 style={statStyle}>Wis </h4 >
-      <h5 style={statStyle}>{Stat()}</h5>
-      <h4 style={statStyle}>Cha </h4>
-      <h5 style={statStyle}>{Stat()}</h5>
+      <h2 style={statStyle} >Dex <br />{Stat()} </h2>
+      <h2 style={statStyle} >Str <br />{Stat()} </h2>
+      <h2 style={statStyle} >Con <br />{Stat()} </h2>
+      <h2 style={statStyle} >Int <br />{Stat()} </h2>
+      <h2 style={statStyle} >Wis <br />{Stat()} </h2>
+      <h2 style={statStyle} >Cha <br />{Stat()} </h2>
+   
     </div>
   );
 }

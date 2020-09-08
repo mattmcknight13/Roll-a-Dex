@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import axios from "axios";
 
-function Form() {
+function Form(props) {
+  const { setNpcInfo } = props;
   // use states set current and append information to api
   const [name, setName] = useState("");
   const [race, setRace] = useState("");
@@ -23,7 +24,7 @@ function Form() {
       description,
       hook,
     };
-    console.log(fields);
+    // console.log(fields);
     // create varaible to assign api endpoint
     const airtableURL = `https://api.airtable.com/v0/${process.env.REACT_APP_AIRTABLE_BASE}/npc`;
     // make axios post call
@@ -40,8 +41,9 @@ function Form() {
         },
       }
     );
+    // grab fields object to be sent to app.js for state change
+    setNpcInfo(fields);
     // resets state to empty field
-    // props.setNpc(!props.npc);
     setName("");
     setRace("");
     setJob("");
@@ -50,12 +52,17 @@ function Form() {
     setHook("");
   };
 
+  const formStyle = {
+    margin: 20,
+  };
+
   return (
     <div>
       {/* trigger handleSubmit function */}
       <form onSubmit={handleSubmit}>
         <div>
           <input
+            style={formStyle}
             name="name"
             type="text"
             placeholder="Enter Name"
@@ -65,6 +72,7 @@ function Form() {
         </div>
         <div>
           <input
+            style={formStyle}
             name="race"
             type="text"
             placeholder="Enter Race"
@@ -74,6 +82,7 @@ function Form() {
         </div>
         <div>
           <input
+            style={formStyle}
             name="sex"
             type="text"
             placeholder="Enter Sex"
@@ -83,6 +92,7 @@ function Form() {
         </div>
         <div>
           <input
+            style={formStyle}
             name="job"
             type="text"
             placeholder="Enter Job/Class"
@@ -92,6 +102,7 @@ function Form() {
         </div>
         <div>
           <input
+            style={formStyle}
             name="description"
             type="text"
             placeholder="Enter Description"
@@ -101,6 +112,7 @@ function Form() {
         </div>
         <div>
           <input
+            style={formStyle}
             name="hook"
             type="text"
             placeholder="Enter Story hook"
@@ -109,7 +121,9 @@ function Form() {
           ></input>
         </div>
         <div>
-          <button type="submit">Generate Created NPC</button>
+          <button style={formStyle} type="submit">
+            Generate Created NPC
+          </button>
         </div>
       </form>
     </div>

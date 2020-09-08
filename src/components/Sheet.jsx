@@ -3,8 +3,13 @@ import React from "react";
 // import GetNpc from "./GetNpc";
 // import Stats from './Stats'
 function Sheet(props) {
+  const sheetStyle = {
+    // backgroundColor: 'linen',
+ }
+
+
   return (
-    <div>
+    <div style={sheetStyle}>
       <h2>Character Sheet</h2>
     </div>
   );
