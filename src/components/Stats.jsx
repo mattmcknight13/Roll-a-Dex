@@ -3,7 +3,6 @@ import React, { useState, useEffect } from "react";
 
 function Stats() {
 
-  
   let stat = [];
   let min = 6;
   let max = 18;

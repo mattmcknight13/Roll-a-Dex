@@ -10,7 +10,7 @@ function App(props) {
   // set default useStates for my npc value and npc keys
   const [npc, setNpc] = useState([]);
   const [npcKey, setNpcKey] = useState([]);
-  // pulls set state of creat npc form
+  // pulls set state of create npc form
   const [npcInfo, setNpcInfo] = useState({});
 
   // Triggers Get api call on first load
@@ -42,21 +42,25 @@ function App(props) {
  
 
 
-  const bodyStyle = {
-    // backgroundColor: 'linen'
-  }
+  
   const headerStyle = {
     textAlign: 'center',
     backgroundColor: 'skyBlue'
   }
+  
   const navStyle = {
-    color: 'blue',
     display: 'flex',
     textAlign: 'center',
     justifyContent: 'space-around',
     textDecoration: 'none',
-    textDexorationLine: 'none' 
+    textDexorationLine: 'none',
   }
+  
+  const linkStyle = {
+    textDecoration: 'none',
+    color: 'white'
+  }
+
   const mainStyle = {
     textAlign: 'center',
     backgroundColor: 'linen'
@@ -69,19 +73,19 @@ function App(props) {
   
 
   return (
-    <div style={bodyStyle}>
+    <div>
       <header style={headerStyle} >
         <h1>Roll-a-Dex NPC Generator</h1>
         <nav style={navStyle}>
-        <Link  to="/">Create NPC</Link>
-        <Link to="/sheet"> Random Npc</Link>
+        <Link style={linkStyle}  to="/">Create NPC</Link>
+        <Link style={linkStyle} to="/sheet"> Random Npc</Link>
       </nav>
       </header>
       
       <main style={mainStyle}>
         <Switch>
           <Route exact path="/">
-            <h3>Create a NPC</h3>
+            <h2>Create a NPC</h2>
             {/* pass down props/state to Form */}
             <Form
               onSubmit="/sheet"
