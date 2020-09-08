@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link, Route, Switch } from "react-router-dom";
 import Form from "./components/Form";
 import Sheet from "./components/Sheet";
@@ -7,6 +7,7 @@ import RandomButton from "./components/RandomButton";
 import Stat from "./components/Stats";
 
 function App(props) {
+  // const [npcFunction, setNpcFunction] = useState(callback => {callback})
   return (
     <div>
       <header>
@@ -21,11 +22,7 @@ function App(props) {
           <Route exact path="/">
             <RandomButton />
             <h3>Create a NPC</h3>
-            <Form
-              onSubmit="/sheet" 
-              npc={props.npc}
-              setNpc={props.setNpc}
-            />
+            <Form onSubmit="/sheet" npc={props.npc} setNpc={props.setNpc} />
           </Route>
           <Route path="/sheet">
             <Sheet />

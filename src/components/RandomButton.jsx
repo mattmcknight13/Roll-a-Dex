@@ -4,7 +4,9 @@ import React from "react";
 const RandomButton = (props) => {
   return (
     <div>
-      <button onClick={() => props.getRandomNpc()}>Generate a Random NPC</button>
+      <button onClick={() => props.getRandomNpc()}>
+        Generate a Random NPC
+      </button>
     </div>
   );
 };

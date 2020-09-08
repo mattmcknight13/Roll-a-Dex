@@ -111,3 +111,8 @@ function Form(props) {
 }
 
 export default Form;
+
+
+
+// thoughts: (most likely wrong) looks like i need to grab the handlesubmit object i 
+// create before api call happens and lift it to app.js then down to getnpc map for render, but how ?!?!?!?!?!?!
