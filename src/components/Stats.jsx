@@ -1,4 +1,5 @@
 import React from "react";
+import { findByLabelText } from "@testing-library/react";
 
 function Stats() {
   let stat = [];
@@ -13,14 +14,29 @@ function Stats() {
     }
   };
 
+  const style = {
+    display: 'flex',
+  }
+
+  const statStyle = {
+    margin: 40
+  }
+
   return (
-    <div>
-      <h4>Dex {Stat()}</h4>
-      <h4>Str {Stat()}</h4>
-      <h4>Con {Stat()}</h4>
-      <h4>Int {Stat()}</h4>
-      <h4>Wis {Stat()}</h4>
-      <h4>Cha {Stat()}</h4>
+   
+    <div style={style}>
+      <h4 style={statStyle} >Dex </h4>
+      <h5 style={statStyle}>{Stat()}</h5>
+      <h4 style={statStyle}>Str </h4 >
+      <h5 style={statStyle}>{Stat()}</h5>
+      <h4 style={statStyle}>Con  </h4>
+      <h5 style={statStyle}>{Stat ()}</h5>
+      <h4 style={statStyle}>Int </ h4>
+      <h5 style={statStyle}>{Stat() }</h5>
+      <h4 style={statStyle}>Wis </h4 >
+      <h5 style={statStyle}>{Stat()}</h5>
+      <h4 style={statStyle}>Cha </h4>
+      <h5 style={statStyle}>{Stat()}</h5>
     </div>
   );
 }
@@ -30,7 +46,7 @@ export default Stats;
 // Need to generate 6 random numbers
 // need assign those numbers to stat blocks
 // need to give each number a modifer based on stat number (ex swtich statemnet)
-// for perception, insight, and investigation need to use stats to give passive stats
+// for perception, insight, and investigation need to use stats to give passive stats (wis and int stat modifers)
 // need to be tied to both buttons to generate and be displayed
 
 /*
@@ -44,7 +60,7 @@ Int
 Wis
 Cha
 
-  Stat Modifiers
+  Stat Modifiers (switch statement)
   6-7 = -2
   8-9 = -1
   10-11 = 0
@@ -55,7 +71,7 @@ Cha
   20 = +5
 
 
- Passive Senses
+ Passive Senses  (quick arithmatic )
  Perception = Wis Modifier + 10
  Investigation = Int Modifier + 10
  Insight = Wis Modifier + 10

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 
-function Form(props) {
+function Form() {
   // use states set current and append information to api
   const [name, setName] = useState("");
   const [race, setRace] = useState("");
