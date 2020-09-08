@@ -12,6 +12,7 @@ function App(props) {
   const [npcKey, setNpcKey] = useState([]);
   // pulls set state of create npc form
   const [npcInfo, setNpcInfo] = useState({});
+  
 
   // Triggers Get api call on first load
   useEffect(() => {
@@ -39,49 +40,50 @@ function App(props) {
     setNpcKey(npcKeys);
     setNpc(npcValues);
   };
- 
 
-
-  
   const headerStyle = {
-    textAlign: 'center',
-    backgroundColor: 'skyBlue'
-  }
-  
+    textAlign: "center",
+    backgroundColor: "skyBlue",
+  };
+
   const navStyle = {
-    display: 'flex',
-    textAlign: 'center',
-    justifyContent: 'space-around',
-    textDecoration: 'none',
-    textDexorationLine: 'none',
-  }
-  
+    display: "flex",
+    textAlign: "center",
+    justifyContent: "space-around",
+    textDecoration: "none",
+    textDexorationLine: "none",
+  };
+
   const linkStyle = {
-    textDecoration: 'none',
-    color: 'white'
-  }
+    textDecoration: "none",
+    color: "white",
+  };
 
   const mainStyle = {
-    textAlign: 'center',
-    backgroundColor: 'linen'
-  }
+    textAlign: "center",
+    backgroundColor: "linen",
+  };
 
   const footerStyle = {
-    backgroundColor: 'skyBlue',
-    height: 100
-  }
-  
+    backgroundColor: "skyBlue",
+    height: 100,
+  };
 
   return (
     <div>
-      <header style={headerStyle} >
+      <header style={headerStyle}>
         <h1>Roll-a-Dex NPC Generator</h1>
         <nav style={navStyle}>
-        <Link style={linkStyle}  to="/">Create NPC</Link>
-        <Link style={linkStyle} to="/sheet"> Random Npc</Link>
-      </nav>
+          <Link style={linkStyle} to="/">
+            Create NPC
+          </Link>
+          <Link style={linkStyle} to="/sheet">
+            {" "}
+            Random Npc
+          </Link>
+        </nav>
       </header>
-      
+
       <main style={mainStyle}>
         <Switch>
           <Route exact path="/">
@@ -98,7 +100,7 @@ function App(props) {
             <Sheet npcInfo={npcInfo} />
             <Stat />
             {/* pass down  props/state to GetNpc */}
-            <GetNpc npc={npc} npcKey={npcKey} getRandomNpc={makeApiCall} />
+            <GetNpc npc={npc} npcKey={npcKey} setNpcInfo={setNpcInfo} getRandomNpc={makeApiCall} />
           </Route>
         </Switch>
       </main>

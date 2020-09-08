@@ -5,7 +5,8 @@ import RandomButton from "./RandomButton";
 // initate GetNpc function
 const GetNpc = (props) => {
   // destructure props object
-  const { npcKey, npc, getRandomNpc } = props;
+  const { npcKey, npc, getRandomNpc, setNpcInfo } = props;
+  console.log(setNpcInfo)
 
   return (
     <div className="randomnpc">
@@ -14,9 +15,9 @@ const GetNpc = (props) => {
         <RandomButton getRandomNpc={getRandomNpc} />
         {/* map through selected object to give key values to be classname, and assign values to approriate p tag */}
         {npc.map((n, idx) => (
-          <p className={npcKey[idx]} key={idx}>
+          <h2 className={npcKey[idx]} key={idx}>
            {npcKey[idx]}: {n}
-          </p>
+          </h2>
         ))}
       </>
     </div>

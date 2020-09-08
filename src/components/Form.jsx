@@ -24,7 +24,6 @@ function Form(props) {
       description,
       hook,
     };
-    // console.log(fields);
     // create varaible to assign api endpoint
     const airtableURL = `https://api.airtable.com/v0/${process.env.REACT_APP_AIRTABLE_BASE}/npc`;
     // make axios post call

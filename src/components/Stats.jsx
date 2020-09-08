@@ -10,7 +10,7 @@ function Stats() {
   const Stat = () => {
     for (let i = 6; i > 0; i--) {
       stat = min + Math.floor(Math.random() * (max - min + 1));
-      // console.log(stat);
+      
       return stat;
     }
   };
