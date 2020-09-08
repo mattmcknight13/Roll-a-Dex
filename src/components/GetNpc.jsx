@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import axios from "axios";
 import RandomButton from "./RandomButton";
 import { Route } from "react-router-dom";
@@ -7,10 +7,6 @@ import { Route } from "react-router-dom";
 const GetNpc = (props) => {
   const [npc, setNpc] = useState([]);
   const [key, setKey] = useState([]);
-
-  useEffect(() => {
-    makeApiCall();
-  }, []);
 
   const makeApiCall = async () => {
     const airtableURL = `https://api.airtable.com/v0/${process.env.REACT_APP_AIRTABLE_BASE}/npc`;
@@ -21,8 +17,8 @@ const GetNpc = (props) => {
     });
     let arr = res.data.records;
     let i = Math.floor(Math.random() * arr.length);
-    let npcKeys = Object.keys(res.data.records[i].fields);
-    let npcValues = Object.values(res.data.records[i].fields);
+    let npcKeys = Object.keys(arr[i].fields);
+    let npcValues = Object.values(arr[i].fields);
     setKey(npcKeys);
     setNpc(npcValues);
   };
@@ -46,4 +42,3 @@ const GetNpc = (props) => {
 export default GetNpc;
 
 // render information to  character sheet
-

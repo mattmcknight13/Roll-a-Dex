@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 
-function Form() {
+function Form(props) {
   // use states set current and append information to api
   const [name, setName] = useState("");
   const [race, setRace] = useState("");
@@ -36,6 +36,7 @@ function Form() {
       }
     );
     // resets state to empty field
+    props.setNpc(!props.npc);
     setName("");
     setRace("");
     setJob("");
@@ -46,7 +47,7 @@ function Form() {
 
   return (
     <div>
-      <form  onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit}>
         <div>
           <input
             name="name"

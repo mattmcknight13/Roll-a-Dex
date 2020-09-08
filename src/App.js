@@ -6,7 +6,7 @@ import GetNpc from "./components/GetNpc";
 import RandomButton from "./components/RandomButton";
 import Stat from "./components/Stats";
 
-function App() {
+function App(props) {
   return (
     <div>
       <header>
@@ -21,7 +21,11 @@ function App() {
           <Route exact path="/">
             <RandomButton />
             <h3>Create a NPC</h3>
-            <Form onSubmit="/sheet" />
+            <Form
+              onSubmit="/sheet" 
+              npc={props.npc}
+              setNpc={props.setNpc}
+            />
           </Route>
           <Route path="/sheet">
             <Sheet />
@@ -72,5 +76,3 @@ Random Number Generator 1 - will be for generating random number to attach to ar
 Random number generator 2- creates stat array and assigns numbers, runs each through a switch statement to provide modifier and quick provides passive senses 
 
 */
-
-
