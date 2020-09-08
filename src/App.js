@@ -1,12 +1,36 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link, Route, Switch } from "react-router-dom";
 import Form from "./components/Form";
 import Sheet from "./components/Sheet";
 import GetNpc from "./components/GetNpc";
 import RandomButton from "./components/RandomButton";
 import Stat from "./components/Stats";
+import axios from 'axios'
 
 function App(props) {
+
+  const [npc, setNpc] = useState([]);
+  const [npcKey, setNpcKey] = useState([]);
+  
+  useEffect(() => { 
+    makeApiCall()
+  }, [])
+  
+
+  const makeApiCall = async () => {
+    const airtableURL = `https://api.airtable.com/v0/${process.env.REACT_APP_AIRTABLE_BASE}/npc`;
+    const res = await axios.get(airtableURL, {
+      headers: {
+        Authorization: `Bearer ${process.env.REACT_APP_AIRTABLE_KEY}`,
+      },
+    });
+    let arr = res.data.records;
+    let i = Math.floor(Math.random() * arr.length);
+    let npcKeys = Object.keys(arr[i].fields);
+    let npcValues = Object.values(arr[i].fields);
+    setNpcKey(npcKeys);
+    setNpc(npcValues);
+  };
   // const [npcFunction, setNpcFunction] = useState(callback => {callback})
   return (
     <div>
@@ -15,19 +39,20 @@ function App(props) {
       </header>
       <nav>
         <Link to="/">Create NPC</Link>
-        <Link to="/sheet">Character Sheet</Link>
+        <Link to="/sheet"> Random Npc</Link>
+        
       </nav>
       <main>
         <Switch>
           <Route exact path="/">
-            <RandomButton />
+            {/* <RandomButton getRandomNpc={makeApiCall} /> */}
             <h3>Create a NPC</h3>
             <Form onSubmit="/sheet" npc={props.npc} setNpc={props.setNpc} />
           </Route>
           <Route path="/sheet">
             <Sheet />
+            <GetNpc npc={npc} npcKey={npcKey} getRandomNpc={makeApiCall} />
             <Stat />
-            <GetNpc />
           </Route>
         </Switch>
       </main>

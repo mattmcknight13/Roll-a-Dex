@@ -10,6 +10,8 @@ function Form(props) {
   const [description, setDescription] = useState("");
   const [hook, setHook] = useState("");
 
+  // console.log(name,race,sex,job,description,hook)
+
   // onsubmit organizes info into object to be sent to api
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -21,10 +23,9 @@ function Form(props) {
       description,
       hook,
     };
+    console.log(fields)
     // api call posts new fields object to api database
     const airtableURL = `https://api.airtable.com/v0/${process.env.REACT_APP_AIRTABLE_BASE}/npc`;
-    console.log(fields);
-    // await axios.post(url, data, options (headers))
     await axios.post(
       airtableURL,
       { fields },
@@ -36,7 +37,7 @@ function Form(props) {
       }
     );
     // resets state to empty field
-    props.setNpc(!props.npc);
+    // props.setNpc(!props.npc);
     setName("");
     setRace("");
     setJob("");

@@ -5,33 +5,17 @@ import { Route } from "react-router-dom";
 
 //get call
 const GetNpc = (props) => {
-  const [npc, setNpc] = useState([]);
-  const [key, setKey] = useState([]);
+  const { npcKey, npc, getRandomNpc } = props;
 
-  const makeApiCall = async () => {
-    const airtableURL = `https://api.airtable.com/v0/${process.env.REACT_APP_AIRTABLE_BASE}/npc`;
-    const res = await axios.get(airtableURL, {
-      headers: {
-        Authorization: `Bearer ${process.env.REACT_APP_AIRTABLE_KEY}`,
-      },
-    });
-    let arr = res.data.records;
-    let i = Math.floor(Math.random() * arr.length);
-    let npcKeys = Object.keys(arr[i].fields);
-    let npcValues = Object.values(arr[i].fields);
-    setKey(npcKeys);
-    setNpc(npcValues);
-  };
+
 
   return (
     <div className="randomnpc">
       <>
-        <Route path="/">
-          <RandomButton getRandomNpc={makeApiCall} />
-        </Route>
-        {npc.map((npc, idx) => (
-          <p className={key[idx]} key={idx}>
-            {npc}
+        <RandomButton getRandomNpc={getRandomNpc} />
+        {npc.map((n, idx) => (
+          <p className={npcKey[idx]} key={idx}>
+            {n}
           </p>
         ))}
       </>
