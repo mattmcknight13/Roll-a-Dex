@@ -59,7 +59,37 @@ function App(props) {
     setNpcKey(npcKeys);
     setNpc(npcValues);
   };
-
+// Soleil's idea
+  //create getStat function with min,max as params
+  const getStat = (min, max) => {
+    //create helper function to hanlde math.random  calc
+    const minMax = (min, max) => Math.floor(Math.random() * (max - min + 1));
+    // create a object randomNum that that calcualtes attribtues
+    const randomNum = {
+      Dex: 6 + minMax(6, 18),
+      Str: 6 + minMax(6, 18),
+      Con: 6 + minMax(6, 18),
+      Int: 6 + minMax(6, 18),
+      Wis: 6 + minMax(6, 18),
+      Cha: 6 + minMax(6, 18),
+    }
+    //  min + Math.floor(Math.random() * (max - min + 1));
+    // console.log(stat)
+    // setRandomNumber state object creates new randomized number 6-18
+    setRandomNumber(randomNum);
+    // console.log('ln 70',randomNumber)
+    // setMod runs getMod function 
+    setMod({
+      //set mod state by taking randomNumb value and pushing through if else
+      Dex: getMod(randomNum.Dex), 
+      Str: getMod(randomNum.Str),
+      Con: getMod(randomNum.Con),
+      Int: getMod(randomNum.Int),
+      Wis: getMod(randomNum.Wis),
+      Cha: getMod(randomNum.Cha),
+    });
+    console.log('ln 103', mod);
+  }
   //  takes randomNumber.name value and runs it through a if/else
   const getMod = (stat) => {
     console.log('ln 62',stat === 6) // showing up two stages behind by showing previous states? goes from all 0's to all 4's to first actual call 
@@ -81,34 +111,9 @@ function App(props) {
   };
  
 
-  const getStat = (min,max) => {
-    
 
-    //  min + Math.floor(Math.random() * (max - min + 1));
-    // console.log(stat)
-    // setRandomNumber state object creates new randomized number 6-18
-    setRandomNumber({
-      Dex: 6 + Math.floor(Math.random() * (18 - 6 + 1)),
-      Str: 6 + Math.floor(Math.random() * (18 - 6 + 1)),
-      Con: 6 + Math.floor(Math.random() * (18 - 6 + 1)),
-      Int: 6 + Math.floor(Math.random() * (18 - 6 + 1)),
-      Wis: 6 + Math.floor(Math.random() * (18 - 6 + 1)),
-      Cha: 6 + Math.floor(Math.random() * (18 - 6 + 1)),
-    });
-    // console.log('ln 70',randomNumber)
-    // setMod runs getMod function 
-    setMod({
-      Dex: getMod(randomNumber.Dex), //...randomNumber.Dex leads to uncallable (beleive i need to update the object state with prevState or spread operator not sure where to use that at though)
-      Str: getMod(randomNumber.Str),
-      Con: getMod(randomNumber.Con),
-      Int: getMod(randomNumber.Int),
-      Wis: getMod(randomNumber.Wis),
-      Cha: getMod(randomNumber.Cha),
-    });
-    console.log('ln 103',mod);
-  };
 
- const bodyStyle = {
+ const body = {
     border: `solid black`,
   }
   const headerStyle = {
@@ -140,7 +145,7 @@ function App(props) {
 
   return (
     
-    <div style={bodyStyle}>
+    <div style={body}>
       <header style={headerStyle}>
         <h1>Roll-a-Dex NPC Generator</h1>
         <nav style={navStyle}>
@@ -169,7 +174,7 @@ function App(props) {
           </Route>
           <Route path="/sheet">
             <Sheet npcInfo={npcInfo} />
-            {/* <Stat randomNumber={props.randomNumber}/> */}
+            {/* <Stat randomNumber={props.randomNumber} mod={props.mod} getStat={getStat}/> */}
             {/* pass down  props/state to GetNpc */}
             <GetNpc
               npc={npc}

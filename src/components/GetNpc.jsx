@@ -14,7 +14,7 @@ const GetNpc = (props) => {
       <>
         {/* have button trigger api call on click */}
         <RandomButton getRandomNpc={getRandomNpc} getStat={getStat}/>
-        {/* map through selected object to give key values to be classname, and assign values to approriate p tag */}
+        {/* map through selected object to give key values to be classname, and assign values to approriate h2 tag */}
         {npc.map((n, idx) => (
           <h2 className={npcKey[idx]} key={idx}>
            {npcKey[idx]}: {n}
