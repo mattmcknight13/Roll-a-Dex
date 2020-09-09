@@ -14,6 +14,7 @@ function App(props) {
   const [npcInfo, setNpcInfo] = useState({});
   console.log("app.js", npcInfo);
 
+  //set randomNumber state to object
   const [randomNumber, setRandomNumber] = useState({
     Dex: 0,
     Str: 0,
@@ -22,6 +23,7 @@ function App(props) {
     Wis: 0,
     Cha: 0,
   });
+  // set state for modifier
   const [mod, setMod] = useState({
     Dex: 0,
     Str: 0,
@@ -57,8 +59,10 @@ function App(props) {
     setNpcKey(npcKeys);
     setNpc(npcValues);
   };
+
+  // 
   const getMod = (stat) => {
-    console.log('ln 61',stat === 6)
+    console.log('ln 62',stat === 6) // showing up two stages behind by showing previous states? goes from all 0's to all 4's to first actual call 
     if (stat === 6 || stat === 7) {
       return -2;
     } else if (stat === 8 || stat === 9) {
@@ -75,23 +79,24 @@ function App(props) {
       return 4;
     }
   };
+ 
 
-  const getStat = () => {
-    let min = 6;
-    let max = 18;
+  const getStat = (min,max) => {
+    
 
     //  min + Math.floor(Math.random() * (max - min + 1));
     // console.log(stat)
+    // setRandomNumber state object creates new randomized number 6-18
     setRandomNumber({
-      Dex: min + Math.floor(Math.random() * (max - min + 1)),
-      Str: min + Math.floor(Math.random() * (max - min + 1)),
-      Con: min + Math.floor(Math.random() * (max - min + 1)),
-      Int: min + Math.floor(Math.random() * (max - min + 1)),
-      Wis: min + Math.floor(Math.random() * (max - min + 1)),
-      Cha: min + Math.floor(Math.random() * (max - min + 1)),
+      Dex: 6 + Math.floor(Math.random() * (18 - 6 + 1)),
+      Str: 6 + Math.floor(Math.random() * (18 - 6 + 1)),
+      Con: 6 + Math.floor(Math.random() * (18 - 6 + 1)),
+      Int: 6 + Math.floor(Math.random() * (18 - 6 + 1)),
+      Wis: 6 + Math.floor(Math.random() * (18 - 6 + 1)),
+      Cha: 6 + Math.floor(Math.random() * (18 - 6 + 1)),
     });
     // console.log('ln 70',randomNumber)
-
+    // setMod runs getMod function 
     setMod({
       Dex: getMod(randomNumber.Dex),
       Str: getMod(randomNumber.Str),
