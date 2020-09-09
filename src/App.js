@@ -3,7 +3,7 @@ import { Link, Route, Switch } from "react-router-dom";
 import Form from "./components/Form";
 import Sheet from "./components/Sheet";
 import GetNpc from "./components/GetNpc";
-// import Stat from "./components/Stats";    
+import Stats from "./components/Stats";
 import axios from "axios";
 
 function App(props) {
@@ -58,8 +58,9 @@ function App(props) {
     let npcValues = Object.values(arr[i].fields);
     setNpcKey(npcKeys);
     setNpc(npcValues);
+    getStat();
   };
-// Soleil's idea
+  // Soleil's idea
   //create getStat function with min,max as params
   const getStat = (min, max) => {
     //create helper function to hanlde math.random  calc
@@ -72,27 +73,27 @@ function App(props) {
       Int: 6 + minMax(6, 18),
       Wis: 6 + minMax(6, 18),
       Cha: 6 + minMax(6, 18),
-    }
+    };
     //  min + Math.floor(Math.random() * (max - min + 1));
     // console.log(stat)
     // setRandomNumber state object creates new randomized number 6-18
     setRandomNumber(randomNum);
     // console.log('ln 70',randomNumber)
-    // setMod runs getMod function 
+    // setMod runs getMod function
     setMod({
       //set mod state by taking randomNumb value and pushing through if else
-      Dex: getMod(randomNum.Dex), 
+      Dex: getMod(randomNum.Dex),
       Str: getMod(randomNum.Str),
       Con: getMod(randomNum.Con),
       Int: getMod(randomNum.Int),
       Wis: getMod(randomNum.Wis),
       Cha: getMod(randomNum.Cha),
     });
-    console.log('ln 103', mod);
-  }
+    console.log("ln 103", mod);
+  };
   //  takes randomNumber.name value and runs it through a if/else
   const getMod = (stat) => {
-    console.log('ln 62',stat === 6) // showing up two stages behind by showing previous states? goes from all 0's to all 4's to first actual call 
+    console.log("ln 62", stat === 6); // showing up two stages behind by showing previous states? goes from all 0's to all 4's to first actual call
     if (stat === 6 || stat === 7) {
       return -2;
     } else if (stat === 8 || stat === 9) {
@@ -109,13 +110,10 @@ function App(props) {
       return 4;
     }
   };
- 
 
-
-
- const body = {
+  const body = {
     border: `solid black`,
-  }
+  };
   const headerStyle = {
     textAlign: "center",
     backgroundColor: "skyBlue",
@@ -128,14 +126,24 @@ function App(props) {
     textDexorationLine: "none",
   };
 
-  const linkStyle = {
-    color: "white",
+  const createNpcStyle = {
+    color: "black",
+    border: "solid 1px rgb(107,107,107)",
+    background: "rgb(237,237,237)",
     textDecoration: "none",
+    marginTop: `40px`,
+  };
+
+  const randomStyle = {
+    color: "black",
+    border: "solid 1px rgb(107,107,107)",
+    background: "rgb(237,237,237)",
+    textDecoration: "none",
+    marginTop: `40px`,
   };
 
   const mainStyle = {
     textAlign: "center",
-
   };
 
   const footerStyle = {
@@ -144,15 +152,14 @@ function App(props) {
   };
 
   return (
-    
     <div style={body}>
       <header style={headerStyle}>
         <h1>Roll-a-Dex NPC Generator</h1>
         <nav style={navStyle}>
-          <Link style={linkStyle} to="/">
+          <Link style={createNpcStyle} to="/">
             Create NPC
           </Link>
-          <Link style={linkStyle} to="/sheet">
+          <Link style={randomStyle} to="/sheet">
             {" "}
             Random Npc
           </Link>
@@ -174,7 +181,7 @@ function App(props) {
           </Route>
           <Route path="/sheet">
             <Sheet npcInfo={npcInfo} />
-            {/* <Stat randomNumber={props.randomNumber} mod={props.mod} getStat={getStat}/> */}
+            <Stats randomNumber={randomNumber} mod={mod} getStat={getStat} />
             {/* pass down  props/state to GetNpc */}
             <GetNpc
               npc={npc}

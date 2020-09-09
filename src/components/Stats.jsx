@@ -1,42 +1,66 @@
-// import React from "react";
-// // import { Switch } from "react-router-dom";
+import React from "react";
+// import { Switch } from "react-router-dom";
 
-// function Stats(props) {
-//   const {randomNumber, mod, getStat } = props
+function Stats(props) {
+  const { randomNumber, mod, getStat } = props;
 
-//   function handleChange(e) {
-//     const { name } = e.target;
-//     const value = getStat();
-//     randomNumber({
-//       [name]: value,
-//     });
-//   }
+  let perception = mod.Wis + 10;
+  // console.log(percpetion)
 
-//   const style = {
-//     display: "flex",
-//     justifyContent: "center",
-//   };
+  let investigation = mod.Int + 10;
 
-//   const statStyle = {
-//     margin: 100,
-//     border: "solid green",
-//     padding: 20,
-//   };
+  const style = {
+    display: "flex",
+    justifyContent: "center",
+  };
 
-//   return (
-//     <div style={style}>
-//         <input name="Dex" value={randomNumber.Dex} style={statStyle} onChange={(e) => handleChange(e)}>Dex <br />{randomNumber.Dex}</input>
-//         <input name="Str" value={randomNumber.Str} style={statStyle} onChange={(e) => handleChange(e)}> Str <br />{randomNumber.Str}</input>
-//         <input name="Con" value={randomNumber.Con} style={statStyle} onChange={(e) => handleChange(e)}>Con <br />{randomNumber.Con}</input>
-//         <input name="Int" value={randomNumber.Int} style={statStyle} onChange={(e) => handleChange(e)}>Int <br />{randomNumber.Int}</input>
-//         <input name="Wis" value={randomNumber.Wis} style={statStyle} onChange={(e) => handleChange(e)}>Wis <br />{randomNumber.Wis}</input>
-//         <input name="Cha" value={randomNumber.Cha} style={statStyle} onChange={(e) => handleChange(e)}> Cha <br/>{randomNumber.Cha}</input> 
-//      </div>   
-//   );
-// }
+  const statStyle = {
+    margin: 80,
+    border: "solid black",
+    padding: 20,
+  };
 
-
-
+  return (
+    <div style={style}>
+      <h2 style={statStyle}>
+        Dex: <br />
+        {randomNumber.Dex}
+        <br />
+        <h4>{mod.Dex}</h4>
+      </h2>
+      <h2 style={statStyle}>
+        Str: <br />
+        {randomNumber.Str} <br />
+        <h4>{mod.Str}</h4>
+      </h2>
+      <h2 style={statStyle}>
+        Con: <br />
+        {randomNumber.Con}
+        <br /> <h4>{mod.Con}</h4>
+      </h2>
+      <h2 style={statStyle}>
+        Int: <br />
+        {randomNumber.Int}
+        <br /> <h4>{mod.Int}</h4>
+      </h2>
+      <h2 style={statStyle}>
+        Wis: <br />
+        {randomNumber.Wis}
+        <br /> <h4>{mod.Wis}</h4>
+      </h2>
+      <h2 style={statStyle}>
+        Cha: <br />
+        {randomNumber.Cha}
+        <br />
+        <h4>{mod.Cha}</h4>
+      </h2>
+      <div className='Senses'>
+        <h2>Perception: {perception}</h2>
+        <h2>Investigation: {investigation}</h2>
+        <h2>Insight: {perception}</h2>
+      </div>
+    </div>
+  );
+}
 
 export default Stats;
-
