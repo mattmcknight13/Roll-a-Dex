@@ -16,5 +16,3 @@ const RandomButton = (props) => {
 };
 
 export default RandomButton;
-
-

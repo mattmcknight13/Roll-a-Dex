@@ -11,8 +11,6 @@ function Form(props) {
   const [description, setDescription] = useState("");
   const [hook, setHook] = useState("");
 
-  
-
   // onsubmit organizes info into object to be sent to api
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -130,5 +128,3 @@ function Form(props) {
 }
 
 export default Form;
-
-

@@ -116,6 +116,7 @@ function App(props) {
   };
   const navStyle = {
     display: "flex",
+    flexFlow: "wrap",
     textAlign: "center",
     justifyContent: "space-around",
     textDecoration: "none",
@@ -184,6 +185,8 @@ function App(props) {
               npcInfo={npcInfo}
               getRandomNpc={makeApiCall}
               getStat={getStat}
+              setNpcInfo={setNpcInfo}
+              npcInfo={npcInfo}
             />
           </Route>
         </Switch>

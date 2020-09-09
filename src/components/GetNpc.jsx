@@ -5,9 +5,8 @@ import RandomButton from "./RandomButton";
 // initate GetNpc function
 const GetNpc = (props) => {
   // destructure props object
-  const { npcKey, npc, getRandomNpc, getStat } = props;
-  console.log("getnpc", props.npcInfo);
- 
+  const { npcKey, npc, getRandomNpc, getStat, npcInfo } = props;
+  console.log("getnpc", npcInfo);
 
   return (
     <div className="randomnpc">
@@ -26,5 +25,3 @@ const GetNpc = (props) => {
 };
 
 export default GetNpc;
-
-
