@@ -31,11 +31,16 @@ function App(props) {
     Cha: 0,
   });
 
+  const [clicked, setClicked] = useState(true)
+
   // Triggers Get api call on first load
   useEffect(() => {
     makeApiCall();
+    return () => {
+      setNpc([])
+    }
   }, []);
-
+  
   // create async function to make api call
   const makeApiCall = async () => {
     // create variable to assign airtable url to
@@ -171,6 +176,8 @@ function App(props) {
               npc={props.npc}
               setNpc={props.setNpc}
               setNpcInfo={setNpcInfo}
+              setClicked={setClicked}
+              clicked={clicked}
             />
           </Route>
           <Route path="/sheet">
@@ -184,6 +191,8 @@ function App(props) {
               getRandomNpc={makeApiCall}
               getStat={getStat}
               setNpcInfo={props.setNpcInfo}
+              clicked={clicked}
+              setClicked={setClicked}
             />
           </Route>
         </Switch>

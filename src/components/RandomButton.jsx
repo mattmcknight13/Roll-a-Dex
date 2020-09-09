@@ -6,6 +6,8 @@ const RandomButton = (props) => {
       {/* onclick button gets random npc */}
       <button
         onClick={() => {
+          console.log('clicked')
+        props.setClicked(!props.clicked)
           props.getRandomNpc();
         }}
       >

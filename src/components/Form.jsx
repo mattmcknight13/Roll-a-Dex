@@ -5,7 +5,7 @@ import axios from "axios";
 function Form(props) {
   //set useHistory hook to a variable name
   const history = useHistory();
-  const { setNpcInfo } = props;
+  const { setNpcInfo, setClicked, clicked } = props;
   // use states set current and append information to api
   const [name, setName] = useState("");
   const [race, setRace] = useState("");
@@ -17,6 +17,7 @@ function Form(props) {
   // onsubmit organizes info into object to be sent to api
   const handleSubmit = async (e) => {
     e.preventDefault();
+    
     const fields = {
       name,
       race,
@@ -52,6 +53,7 @@ function Form(props) {
     setSex("");
     setDescription("");
     setHook("");
+    setClicked(!clicked)
   };
 
   const formStyle = {

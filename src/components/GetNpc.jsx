@@ -5,7 +5,7 @@ import RandomButton from "./RandomButton";
 // initate GetNpc function
 const GetNpc = (props) => {
   // destructure props object
-  const { npcKey, npc, getRandomNpc, getStat, npcInfo, setNpcInfo } = props;
+  const { npcKey, npc, getRandomNpc, getStat, npcInfo, setNpcInfo, clicked, setClicked } = props;
 
   let npcInfoKeys = Object.keys(npcInfo);
   let npcInfoValues = Object.values(npcInfo);
@@ -14,10 +14,10 @@ const GetNpc = (props) => {
     <div className="randomnpc">
       <>
         {/* have button trigger api call on click */}
-        <RandomButton getRandomNpc={getRandomNpc} getStat={getStat} />
+        <RandomButton getRandomNpc={getRandomNpc} getStat={getStat} setClicked={setClicked} clicked={clicked} />
         {/* map through selected object to give key values to be classname, and assign values to approriate h2 tag */}
 
-        {npcInfo ? (
+        { !clicked ? (
           npc.map((n, idx) => (
             <h2 className={npcKey[idx]} key={idx}>
               {npcKey[idx]}: {n}
@@ -39,3 +39,8 @@ const GetNpc = (props) => {
 };
 
 export default GetNpc;
+
+
+// need to set a toggle state to form button that if clicked turns true or false whichever works to render the form data
+// otherwise should show random generated npc infomration
+
