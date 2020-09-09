@@ -3,7 +3,7 @@ import { Link, Route, Switch } from "react-router-dom";
 import Form from "./components/Form";
 import Sheet from "./components/Sheet";
 import GetNpc from "./components/GetNpc";
-// import Stat from "./components/Stats";
+// import Stat from "./components/Stats";    
 import axios from "axios";
 
 function App(props) {
@@ -60,7 +60,7 @@ function App(props) {
     setNpc(npcValues);
   };
 
-  // 
+  //  takes randomNumber.name value and runs it through a if/else
   const getMod = (stat) => {
     console.log('ln 62',stat === 6) // showing up two stages behind by showing previous states? goes from all 0's to all 4's to first actual call 
     if (stat === 6 || stat === 7) {
@@ -75,7 +75,7 @@ function App(props) {
       return 2;
     } else if (stat === 16 || stat === 17) {
       return 3;
-    } else {
+    } else if (stat === 18) {
       return 4;
     }
   };
@@ -98,7 +98,7 @@ function App(props) {
     // console.log('ln 70',randomNumber)
     // setMod runs getMod function 
     setMod({
-      Dex: getMod(randomNumber.Dex),
+      Dex: getMod(randomNumber.Dex), //...randomNumber.Dex leads to uncallable (beleive i need to update the object state with prevState or spread operator not sure where to use that at though)
       Str: getMod(randomNumber.Str),
       Con: getMod(randomNumber.Con),
       Int: getMod(randomNumber.Int),
@@ -108,6 +108,9 @@ function App(props) {
     console.log('ln 103',mod);
   };
 
+ const bodyStyle = {
+    border: `solid black`,
+  }
   const headerStyle = {
     textAlign: "center",
     backgroundColor: "skyBlue",
@@ -127,6 +130,7 @@ function App(props) {
 
   const mainStyle = {
     textAlign: "center",
+
   };
 
   const footerStyle = {
@@ -135,7 +139,8 @@ function App(props) {
   };
 
   return (
-    <div>
+    
+    <div style={bodyStyle}>
       <header style={headerStyle}>
         <h1>Roll-a-Dex NPC Generator</h1>
         <nav style={navStyle}>
@@ -189,6 +194,8 @@ Order of importance
 1. Buttons not conditional rendering information or sending it to correct page so (component tree)(will change how others are handled so key to solve)
 2. grabbing api data for curated npc
 3. stats logic
+
+// font ideas: tangerine
 
 
 - Form page does not display or move data to character sheet page

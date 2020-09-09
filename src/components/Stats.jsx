@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import { Switch } from "react-router-dom";
+// import { Switch } from "react-router-dom";
 
-function Stats() {
+function Stats(props) {
   // const [mod, setMod] = useState({
   //   Dex: 0,
   //   Str: 0,
