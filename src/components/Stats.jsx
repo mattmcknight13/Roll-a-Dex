@@ -1,7 +1,7 @@
 import React from "react";
 
 function Stats(props) {
-  const { randomNumber, mod, getStat } = props;
+  const { randomNumber, mod} = props;
 
   let wisSense = mod.Wis + 10;
 
@@ -21,10 +21,14 @@ function Stats(props) {
   const modStyle = {
     border: "solid black",
     borderRadius: `50%`,
-    height: `20px`,
-    width: `20px`,
+    height: 20,
+    width: 40,
     marginTop: 130,
   };
+
+  const senseStyle = {
+       
+  }
 
   return (
     <div style={style}>
@@ -60,7 +64,7 @@ function Stats(props) {
       </h2>
       <br />
       <h4 style={modStyle}>{mod.Cha}</h4>
-      <div className="Senses">
+      <div className="Senses" style={senseStyle}>
         <h2>Perception: {wisSense}</h2>
         <h2>Investigation: {intSense}</h2>
         <h2>Insight: {wisSense}</h2>

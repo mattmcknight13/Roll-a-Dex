@@ -31,16 +31,16 @@ function App(props) {
     Cha: 0,
   });
 
-  const [clicked, setClicked] = useState(true)
+  const [clicked, setClicked] = useState(true);
 
   // Triggers Get api call on first load
   useEffect(() => {
     makeApiCall();
     return () => {
-      setNpc([])
-    }
+      setNpc([]);
+    };
   }, []);
-  
+
   // create async function to make api call
   const makeApiCall = async () => {
     // create variable to assign airtable url to
@@ -63,7 +63,7 @@ function App(props) {
     setNpc(npcValues);
     getStat();
   };
-  // Soleil's idea
+  //Stefon and  Soleil's ideas (big help witth passing the state up to use functionality further down)
   //create getStat function with min,max as params
   const getStat = (min, max) => {
     //create helper function to hanlde math.random  calc
@@ -113,10 +113,10 @@ function App(props) {
 
   const body = {
     border: `solid black`,
+    backgroundColor: "linen",
   };
   const headerStyle = {
     textAlign: "center",
-    backgroundColor: "skyBlue",
   };
   const navStyle = {
     display: "flex",
@@ -147,10 +147,7 @@ function App(props) {
     textAlign: "center",
   };
 
-  const footerStyle = {
-    backgroundColor: "skyBlue",
-    height: 100,
-  };
+  
 
   return (
     <div style={body}>
@@ -197,7 +194,7 @@ function App(props) {
           </Route>
         </Switch>
       </main>
-      <footer style={footerStyle}></footer>
+      <foote></foote>
     </div>
   );
 }
@@ -206,4 +203,4 @@ export default App;
 
 // TODO"
 
-// render form on creation in character sheet
+// fix double render on button click of random button
