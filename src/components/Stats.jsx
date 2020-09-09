@@ -1,11 +1,11 @@
 import React from "react";
-// import { Switch } from "react-router-dom";
+
 
 function Stats(props) {
   const { randomNumber, mod, getStat } = props;
 
   let perception = mod.Wis + 10;
-  // console.log(percpetion)
+  
 
   let investigation = mod.Int + 10;
 

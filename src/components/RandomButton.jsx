@@ -1,5 +1,4 @@
 import React from "react";
-// import Stats from './Stats'
 
 const RandomButton = (props) => {
   return (
@@ -18,5 +17,4 @@ const RandomButton = (props) => {
 
 export default RandomButton;
 
-// Need to create a button that when clicked  Routes you to character sheet page
-// render information to  character sheet
+

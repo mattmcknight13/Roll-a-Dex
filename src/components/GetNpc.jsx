@@ -7,7 +7,7 @@ const GetNpc = (props) => {
   // destructure props object
   const { npcKey, npc, getRandomNpc, getStat } = props;
   console.log("getnpc", props.npcInfo);
-  // console.log(setNpcInfo)
+ 
 
   return (
     <div className="randomnpc">
@@ -27,7 +27,4 @@ const GetNpc = (props) => {
 
 export default GetNpc;
 
-// render information to  character sheet
 
-// need to either injext fields object which i have moved up to app.js and trick getnpc to render it instead,
-// or find a way to get last element in api array to render as it should be newest item after appending (how would i pop off )

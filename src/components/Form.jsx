@@ -11,7 +11,7 @@ function Form(props) {
   const [description, setDescription] = useState("");
   const [hook, setHook] = useState("");
 
-  // console.log(name,race,sex,job,description,hook)
+  
 
   // onsubmit organizes info into object to be sent to api
   const handleSubmit = async (e) => {
@@ -131,5 +131,4 @@ function Form(props) {
 
 export default Form;
 
-// thoughts: (most likely wrong) looks like i need to grab the handlesubmit object i
-// create before api call happens and lift it to app.js then down to getnpc map for render, but how ?!?!?!?!?!?!
+
