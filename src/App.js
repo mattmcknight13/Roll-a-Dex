@@ -3,7 +3,7 @@ import { Link, Route, Switch } from "react-router-dom";
 import Form from "./components/Form";
 import Sheet from "./components/Sheet";
 import GetNpc from "./components/GetNpc";
-import Stat from "./components/Stats";
+// import Stat from "./components/Stats";
 import axios from "axios";
 
 function App(props) {
@@ -12,7 +12,24 @@ function App(props) {
   const [npcKey, setNpcKey] = useState([]);
   // pulls set state of create npc form
   const [npcInfo, setNpcInfo] = useState({});
-  
+  console.log("app.js", npcInfo);
+
+  const [randomNumber, setRandomNumber] = useState({
+    Dex: 0,
+    Str: 0,
+    Con: 0,
+    Int: 0,
+    Wis: 0,
+    Cha: 0,
+  });
+  const [mod, setMod] = useState({
+    Dex: 0,
+    Str: 0,
+    Con: 0,
+    Int: 0,
+    Wis: 0,
+    Cha: 0,
+  });
 
   // Triggers Get api call on first load
   useEffect(() => {
@@ -40,12 +57,56 @@ function App(props) {
     setNpcKey(npcKeys);
     setNpc(npcValues);
   };
+  const getMod = (stat) => {
+    console.log('ln 61',stat === 6)
+    if (stat === 6 || stat === 7) {
+      return -2;
+    } else if (stat === 8 || stat === 9) {
+      return -1;
+    } else if (stat === 10 || stat === 11) {
+      return 0;
+    } else if (stat === 12 || stat === 13) {
+      return 1;
+    } else if (stat === 14 || stat === 15) {
+      return 2;
+    } else if (stat === 16 || stat === 17) {
+      return 3;
+    } else {
+      return 4;
+    }
+  };
+
+  const getStat = () => {
+    let min = 6;
+    let max = 18;
+
+    //  min + Math.floor(Math.random() * (max - min + 1));
+    // console.log(stat)
+    setRandomNumber({
+      Dex: min + Math.floor(Math.random() * (max - min + 1)),
+      Str: min + Math.floor(Math.random() * (max - min + 1)),
+      Con: min + Math.floor(Math.random() * (max - min + 1)),
+      Int: min + Math.floor(Math.random() * (max - min + 1)),
+      Wis: min + Math.floor(Math.random() * (max - min + 1)),
+      Cha: min + Math.floor(Math.random() * (max - min + 1)),
+    });
+    // console.log('ln 70',randomNumber)
+
+    setMod({
+      Dex: getMod(randomNumber.Dex),
+      Str: getMod(randomNumber.Str),
+      Con: getMod(randomNumber.Con),
+      Int: getMod(randomNumber.Int),
+      Wis: getMod(randomNumber.Wis),
+      Cha: getMod(randomNumber.Cha),
+    });
+    console.log('ln 103',mod);
+  };
 
   const headerStyle = {
     textAlign: "center",
     backgroundColor: "skyBlue",
   };
-
   const navStyle = {
     display: "flex",
     textAlign: "center",
@@ -55,13 +116,12 @@ function App(props) {
   };
 
   const linkStyle = {
-    textDecoration: "none",
     color: "white",
+    textDecoration: "none",
   };
 
   const mainStyle = {
     textAlign: "center",
-    backgroundColor: "linen",
   };
 
   const footerStyle = {
@@ -86,6 +146,7 @@ function App(props) {
 
       <main style={mainStyle}>
         <Switch>
+          {console.log("line 117", randomNumber)}
           <Route exact path="/">
             <h2>Create a NPC</h2>
             {/* pass down props/state to Form */}
@@ -98,9 +159,15 @@ function App(props) {
           </Route>
           <Route path="/sheet">
             <Sheet npcInfo={npcInfo} />
-            <Stat />
+            {/* <Stat randomNumber={props.randomNumber}/> */}
             {/* pass down  props/state to GetNpc */}
-            <GetNpc npc={npc} npcKey={npcKey} setNpcInfo={setNpcInfo} getRandomNpc={makeApiCall} />
+            <GetNpc
+              npc={npc}
+              npcKey={npcKey}
+              npcInfo={npcInfo}
+              getRandomNpc={makeApiCall}
+              getStat={getStat}
+            />
           </Route>
         </Switch>
       </main>
