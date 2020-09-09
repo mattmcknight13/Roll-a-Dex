@@ -12,7 +12,6 @@ function App(props) {
   const [npcKey, setNpcKey] = useState([]);
   // pulls set state of create npc form
   const [npcInfo, setNpcInfo] = useState({});
-
   //set randomNumber state to object
   const [randomNumber, setRandomNumber] = useState({
     Dex: 0,
@@ -157,7 +156,6 @@ function App(props) {
             Create NPC
           </Link>
           <Link style={randomStyle} to="/sheet">
-            {" "}
             Random Npc
           </Link>
         </nav>
@@ -185,8 +183,7 @@ function App(props) {
               npcInfo={npcInfo}
               getRandomNpc={makeApiCall}
               getStat={getStat}
-              setNpcInfo={setNpcInfo}
-              npcInfo={npcInfo}
+              setNpcInfo={props.setNpcInfo}
             />
           </Route>
         </Switch>

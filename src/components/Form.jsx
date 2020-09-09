@@ -1,7 +1,10 @@
 import React, { useState } from "react";
+import { useParams, useHistory } from "react-router-dom";
 import axios from "axios";
 
 function Form(props) {
+  //set useHistory hook to a variable name
+  const history = useHistory();
   const { setNpcInfo } = props;
   // use states set current and append information to api
   const [name, setName] = useState("");
@@ -22,6 +25,8 @@ function Form(props) {
       description,
       hook,
     };
+    // onclick push to sheet page
+    history.push(`/sheet`);
     // create varaible to assign api endpoint
     const airtableURL = `https://api.airtable.com/v0/${process.env.REACT_APP_AIRTABLE_BASE}/npc`;
     // make axios post call
