@@ -9,9 +9,14 @@ const GetNpc = (props) => {
   // get keys and values from npcInfo and assign to variables
   let npcInfoKeys = Object.keys(npcInfo);
   let npcInfoValues = Object.values(npcInfo);
-
+  const npcStyle = {
+    dipsplay: `flex`,
+    flexDirection: `column`,
+    marginTop: `-200px`,
+    marginLeft: `300px`
+  }
   return (
-    <div className="randomnpc">
+    <div className="randomnpc" style={npcStyle}>
       <>
         {/* have button trigger api call on click */}
         <RandomButton getRandomNpc={getRandomNpc} getStat={getStat} setClicked={setClicked} clicked={clicked} />

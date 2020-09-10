@@ -34,12 +34,13 @@ function App(props) {
   const [clicked, setClicked] = useState(true);
 
   // Triggers Get api call on first load
-  useEffect(() => {
-    makeApiCall();
-    return () => {
-      setNpc([]);
-    };
-  }, []);
+  // beleive this can be reomved as api call is actually being made by RandomButton.jsx through get random
+  // useEffect(() => {
+  //   makeApiCall();
+  //   return () => {
+  //     setNpc([]);
+  //   };
+  // }, []);
 
   // create async function to make api call
   const makeApiCall = async () => {
@@ -112,11 +113,16 @@ function App(props) {
   };
 
   const body = {
-    border: `solid black`,
+    display: 'flex',
+    flexDirection: 'column',
     backgroundColor: "linen",
+    height: 'vh',
+    width: 'vw'
   };
   const headerStyle = {
     textAlign: "center",
+    display: 'flex',
+    flexDirection: 'column'
   };
   const navStyle = {
     display: "flex",
@@ -144,6 +150,8 @@ function App(props) {
   };
 
   const mainStyle = {
+    display: 'flex',
+    flexDirection: 'column',
     textAlign: "center",
   };
 
@@ -161,6 +169,7 @@ function App(props) {
             Random Npc
           </Link>
         </nav>
+        
       </header>
 
       <main style={mainStyle}>
@@ -194,7 +203,7 @@ function App(props) {
           </Route>
         </Switch>
       </main>
-      <foote></foote>
+      <footer></footer>
     </div>
   );
 }
