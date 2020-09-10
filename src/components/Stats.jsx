@@ -13,24 +13,28 @@ function Stats(props) {
   };
 
   const statStyle = {
-    margin: 60,
+    // margin: ,
     border: "solid black",
     padding: 20,
+    marginRight: 80
   };
 
   const modStyle = {
     border: "solid black",
     borderRadius: `50%`,
+    marginTop: `-10px`,
+    marginLeft: `-130px`,
     height: 20,
-    width: 40,
-    marginTop: 130,
+    width: 40, 
   };
 
   const senseStyle = {
     display: `flex`,
     flexDirection: `column`,
-    marginTop: `50px`,
-    marginRight: `900px`,
+    marginTop: `-30px`,
+    marginLeft: `200px`,
+    border: `solid black`,
+    width: `200px`
   };
 
   return (
@@ -69,7 +73,9 @@ function Stats(props) {
         <br />
         <h4 style={modStyle}>{mod.Cha}</h4>
       </div>
-      <div className="Senses" style={senseStyle}>
+      <div className="senses" style={senseStyle}>
+        <h1>Senses</h1>
+        <hr style={{color: ` black`, width: 190}}/>
         <h2>Perception: {wisSense}</h2>
         <h2>Investigation: {intSense}</h2>
         <h2>Insight: {wisSense}</h2>

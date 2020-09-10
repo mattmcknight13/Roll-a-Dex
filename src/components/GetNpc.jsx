@@ -38,19 +38,19 @@ const GetNpc = (props) => {
         {/* map through selected object to give key values to be classname, and assign values to approriate h2 tag */}
         {!clicked ? (
           npc.map((n, idx) => (
-            <h2 className={npcKey[idx]} key={idx}>
+            <h4 className={npcKey[idx]} key={idx}>
               {npcKey[idx]}: {n}
-            </h2>
+            </h4>
           ))
         ) : (
           <div>
             {/* render h2 tags where clasname is specfic index of array and value is of same index from different array */}
-            <h2 className={npcInfoKeys[0]}>Name: {npcInfoValues[0]}</h2>
-            <h2 className={npcInfoKeys[1]}>Race: {npcInfoValues[1]}</h2>
-            <h2 className={npcInfoKeys[2]}>Sex: {npcInfoValues[2]}</h2>
-            <h2 className={npcInfoKeys[3]}>Job: {npcInfoValues[3]}</h2>
-            <h2 className={npcInfoKeys[4]}>Description: {npcInfoValues[4]}</h2>
-            <h2 className={npcInfoKeys[5]}>Story Hook: {npcInfoValues[5]}</h2>
+            <h4 className={npcInfoKeys[0]}>name: {npcInfoValues[0]}</h4>
+            <h4 className={npcInfoKeys[1]}>race: {npcInfoValues[1]}</h4>
+            <h4 className={npcInfoKeys[2]}>sex: {npcInfoValues[2]}</h4>
+            <h4 className={npcInfoKeys[3]}>job: {npcInfoValues[3]}</h4>
+            <h4 className={npcInfoKeys[4]}>description: {npcInfoValues[4]}</h4>
+            <h4 className={npcInfoKeys[5]}>hook: {npcInfoValues[5]}</h4>
           </div>
         )}
       </>
@@ -60,5 +60,4 @@ const GetNpc = (props) => {
 
 export default GetNpc;
 
-// need to set a toggle state to form button that if clicked turns true or false whichever works to render the form data
-// otherwise should show random generated npc infomration
+

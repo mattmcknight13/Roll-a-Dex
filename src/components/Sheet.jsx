@@ -1,6 +1,6 @@
 import React from "react";
 
-function Sheet(props) {
+function Sheet() {
   return (
     <div>
       <h2>Character Sheet</h2>

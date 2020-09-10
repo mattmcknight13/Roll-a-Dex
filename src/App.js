@@ -30,43 +30,25 @@ function App(props) {
     Wis: 0,
     Cha: 0,
   });
-
+  //set state for toggle for api input source (form(post), random(get) calls)
   const [clicked, setClicked] = useState(true);
+  console.log(clicked);
 
   // Triggers Get api call on first load
   // beleive this can be reomved as api call is actually being made by RandomButton.jsx through get random
   useEffect(() => {
     return () => {
-      setNpc([]);
+      setNpc([])
       setNpcInfo({});
+      setClicked(true)
     };
-  }, []);
+  }, [setClicked]);
 
-  // create async function to make api call
-  const makeApiCall = async () => {
-    // create variable to assign airtable url to
-    const airtableURL = `https://api.airtable.com/v0/${process.env.REACT_APP_AIRTABLE_BASE}/npc`;
-    // make axios.get call
-    const res = await axios.get(airtableURL, {
-      // provide api key
-      headers: {
-        Authorization: `Bearer ${process.env.REACT_APP_AIRTABLE_KEY}`,
-      },
-    });
-    // create variable to store json object array
-    let arr = res.data.records;
-    // create a varaible i and have it be a random number based on length of api array
-    let i = Math.floor(Math.random() * arr.length);
-    // randomly select one api call based on i
-    let npcKeys = Object.keys(arr[i].fields);
-    let npcValues = Object.values(arr[i].fields);
-    setNpcKey(npcKeys);
-    setNpc(npcValues);
-    getStat();
-  };
   //Stefon and  Soleil's ideas (big help witth passing the state up to use functionality further down)
+  //  takes randomNumber.name value and runs it through a if/else
+  const getMod = (stat) => Math.floor(stat / 2 - 5);
   //create getStat function with min,max as params
-  const getStat = (min, max) => {
+  const getStat = () => {
     //create helper function to hanlde math.random  calc
     const minMax = (min, max) => Math.floor(Math.random() * (max - min + 1));
     // create a object randomNum that that calcualtes attribtues
@@ -93,31 +75,36 @@ function App(props) {
       Cha: getMod(randomNum.Cha),
     });
   };
-  //  takes randomNumber.name value and runs it through a if/else
-  const getMod = (stat) => {
-    if (stat === 6 || stat === 7) {
-      return -2;
-    } else if (stat === 8 || stat === 9) {
-      return -1;
-    } else if (stat === 10 || stat === 11) {
-      return 0;
-    } else if (stat === 12 || stat === 13) {
-      return 1;
-    } else if (stat === 14 || stat === 15) {
-      return 2;
-    } else if (stat === 16 || stat === 17) {
-      return 3;
-    } else if (stat === 18) {
-      return 4;
-    }
+
+  // create async function to make api call
+  const makeApiCall = async () => {
+    // create variable to assign airtable url to
+    const airtableURL = `https://api.airtable.com/v0/${process.env.REACT_APP_AIRTABLE_BASE}/npc`;
+    // make axios.get call
+    const res = await axios.get(airtableURL, {
+      // provide api key
+      headers: {
+        Authorization: `Bearer ${process.env.REACT_APP_AIRTABLE_KEY}`,
+      },
+    });
+    // create variable to store json object array
+    let arr = res.data.records;
+    // create a varaible i and have it be a random number based on length of api array
+    let i = Math.floor(Math.random() * arr.length);
+    // randomly select one api call based on i
+    let npcKeys = Object.keys(arr[i].fields);
+    let npcValues = Object.values(arr[i].fields);
+    setNpcKey(npcKeys);
+    setNpc(npcValues);
+    getStat();
   };
+  console.trace(makeApiCall);
 
   const body = {
     display: "flex",
     flexDirection: "column",
     backgroundColor: "linen",
-    height: "vh",
-    width: "vw",
+    height: `100vh`
   };
   const headerStyle = {
     textAlign: "center",
@@ -133,15 +120,7 @@ function App(props) {
     textDexorationLine: "none",
   };
 
-  const createNpcStyle = {
-    color: "black",
-    border: "solid 1px rgb(107,107,107)",
-    background: "rgb(237,237,237)",
-    textDecoration: "none",
-    marginTop: `40px`,
-  };
-
-  const randomStyle = {
+  const pageButtonStyle = {
     color: "black",
     border: "solid 1px rgb(107,107,107)",
     background: "rgb(237,237,237)",
@@ -160,10 +139,10 @@ function App(props) {
       <header style={headerStyle}>
         <h1>Roll-a-Dex NPC Generator</h1>
         <nav style={navStyle}>
-          <Link style={createNpcStyle} to="/">
+          <Link style={pageButtonStyle} to="/">
             Create NPC
           </Link>
-          <Link style={randomStyle} to="/sheet">
+          <Link style={pageButtonStyle} to="/sheet">
             Random Npc
           </Link>
         </nav>
@@ -199,7 +178,7 @@ function App(props) {
           </Route>
         </Switch>
       </main>
-      <footer></footer>
+     
     </div>
   );
 }
@@ -209,3 +188,6 @@ export default App;
 // TODO"
 
 // fix double render on button click of random button
+// what do we know....
+// - init click console.logs twice
+// - on random click console.logs 10 times
