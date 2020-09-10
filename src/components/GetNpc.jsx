@@ -10,13 +10,10 @@ const GetNpc = (props) => {
     npc,
     getRandomNpc,
     getStat,
-    npcInfo,
     clicked,
     setClicked,
   } = props;
-  // get keys and values from npcInfo and assign to variables
-  let npcInfoKeys = Object.keys(npcInfo);
-  let npcInfoValues = Object.values(npcInfo);
+  
   const npcStyle = {
     dipsplay: `flex`,
     flexDirection: `column`,
@@ -45,12 +42,11 @@ const GetNpc = (props) => {
         ) : (
           <div>
             {/* render h2 tags where clasname is specfic index of array and value is of same index from different array */}
-            <h4 className={npcInfoKeys[0]}>name: {npcInfoValues[0]}</h4>
-            <h4 className={npcInfoKeys[1]}>race: {npcInfoValues[1]}</h4>
-            <h4 className={npcInfoKeys[2]}>sex: {npcInfoValues[2]}</h4>
-            <h4 className={npcInfoKeys[3]}>job: {npcInfoValues[3]}</h4>
-            <h4 className={npcInfoKeys[4]}>description: {npcInfoValues[4]}</h4>
-            <h4 className={npcInfoKeys[5]}>hook: {npcInfoValues[5]}</h4>
+            <h4 className={npcKey[0]}>name: {npc[0]}</h4>
+            <h4 className={npcKey[2]}>sex: {npc[2]}</h4>
+            <h4 className={npcKey[3]}>job: {npc[3]}</h4>
+            <h4 className={npcKey[4]}>description: {npc[4]}</h4>
+            <h4 className={npcKey[5]}>hook: {npc[5]}</h4>
           </div>
         )}
       </>
@@ -59,5 +55,3 @@ const GetNpc = (props) => {
 };
 
 export default GetNpc;
-
-

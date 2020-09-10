@@ -6,7 +6,7 @@ function Form(props) {
   //set useHistory hook to a variable name
   const history = useHistory();
   //destructure props object
-  const { setNpcInfo, setClicked, clicked } = props;
+  const { setNpcKeyValues, setClicked, clicked } = props;
   // use states set current and append information to api
   const [name, setName] = useState("");
   const [race, setRace] = useState("");
@@ -46,7 +46,7 @@ function Form(props) {
       }
     );
     // grab fields object to be sent to app.js for state change
-    setNpcInfo(fields);
+    setNpcKeyValues(fields);
     // resets state to empty field
     setName("");
     setRace("");

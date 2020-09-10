@@ -1,7 +1,6 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { Link, Route, Switch } from "react-router-dom";
 import Form from "./components/Form";
-import Sheet from "./components/Sheet";
 import GetNpc from "./components/GetNpc";
 import Stats from "./components/Stats";
 import axios from "axios";
@@ -10,8 +9,7 @@ function App(props) {
   // set default useStates for my npc value and npc keys
   const [npc, setNpc] = useState([]);
   const [npcKey, setNpcKey] = useState([]);
-  // pulls set state of create npc form
-  const [npcInfo, setNpcInfo] = useState({});
+
   //set randomNumber state to object
   const [randomNumber, setRandomNumber] = useState({
     Dex: 0,
@@ -30,19 +28,9 @@ function App(props) {
     Wis: 0,
     Cha: 0,
   });
+
   //set state for toggle for api input source (form(post), random(get) calls)
   const [clicked, setClicked] = useState(true);
-  console.log(clicked);
-
-  // Triggers Get api call on first load
-  // beleive this can be reomved as api call is actually being made by RandomButton.jsx through get random
-  useEffect(() => {
-    return () => {
-      setNpc([])
-      setNpcInfo({});
-      setClicked(true)
-    };
-  }, [setClicked]);
 
   //Stefon and  Soleil's ideas (big help witth passing the state up to use functionality further down)
   //  takes randomNumber.name value and runs it through a if/else
@@ -75,7 +63,10 @@ function App(props) {
       Cha: getMod(randomNum.Cha),
     });
   };
-
+  const setNpcKeyValues = (fields) => {
+    setNpcKey(Object.keys(fields));
+    setNpc(Object.values(fields));
+  };
   // create async function to make api call
   const makeApiCall = async () => {
     // create variable to assign airtable url to
@@ -92,10 +83,7 @@ function App(props) {
     // create a varaible i and have it be a random number based on length of api array
     let i = Math.floor(Math.random() * arr.length);
     // randomly select one api call based on i
-    let npcKeys = Object.keys(arr[i].fields);
-    let npcValues = Object.values(arr[i].fields);
-    setNpcKey(npcKeys);
-    setNpc(npcValues);
+    setNpcKeyValues(arr[i].fields);
     getStat();
   };
   console.trace(makeApiCall);
@@ -103,9 +91,25 @@ function App(props) {
   const body = {
     display: "flex",
     flexDirection: "column",
-    backgroundColor: "linen",
-    height: `100vh`
+    backgroundColor: "#333",
+    height: `100vh`,
+    padding: `30px`
+
+    // border: `solid rgb(69,59,53)`,
+    // borderWidth: 20,
   };
+
+  const paper = {
+    backgroundColor: "#fff",
+    boxShadow: ` 0 1px 1px rgba(0,0,0,0.15),
+    0 10px 0 -5px #eee,
+    0 10px 1px -4px rgba(0,0,0,0.15),
+    0 20px 0 -10px #eee,
+    0 20px 1 px -9px rgba(0,0,0,0.15)`,
+    padding: `30px`
+    
+  }
+
   const headerStyle = {
     textAlign: "center",
     display: "flex",
@@ -136,6 +140,7 @@ function App(props) {
 
   return (
     <div style={body}>
+      <div style={paper}>
       <header style={headerStyle}>
         <h1>Roll-a-Dex NPC Generator</h1>
         <nav style={navStyle}>
@@ -157,19 +162,17 @@ function App(props) {
               onSubmit="/sheet"
               npc={props.npc}
               setNpc={props.setNpc}
-              setNpcInfo={setNpcInfo}
+              setNpcKeyValues={setNpcKeyValues}
               setClicked={setClicked}
               clicked={clicked}
             />
           </Route>
           <Route path="/sheet">
-            <Sheet npcInfo={npcInfo} />
             <Stats randomNumber={randomNumber} mod={mod} getStat={getStat} />
             {/* pass down  props/state to GetNpc */}
             <GetNpc
               npc={npc}
               npcKey={npcKey}
-              npcInfo={npcInfo}
               getRandomNpc={makeApiCall}
               getStat={getStat}
               clicked={clicked}
@@ -177,17 +180,10 @@ function App(props) {
             />
           </Route>
         </Switch>
-      </main>
-     
+        </main>
+        </div>
     </div>
   );
 }
 
 export default App;
-
-// TODO"
-
-// fix double render on button click of random button
-// what do we know....
-// - init click console.logs twice
-// - on random click console.logs 10 times

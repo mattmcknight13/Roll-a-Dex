@@ -10,18 +10,20 @@ function Stats(props) {
   const style = {
     display: "flex",
     justifyContent: "center",
+    
   };
 
   const statStyle = {
-    // margin: ,
     border: "solid black",
     padding: 20,
-    marginRight: 80
+    marginRight: 80,
+    backgroundColor: 'white'
   };
 
   const modStyle = {
     border: "solid black",
     borderRadius: `50%`,
+    backgroundColor: `white`,
     marginTop: `-10px`,
     marginLeft: `-130px`,
     height: 20,
@@ -34,8 +36,17 @@ function Stats(props) {
     marginTop: `-30px`,
     marginLeft: `200px`,
     border: `solid black`,
-    width: `200px`
+    width: `200px`,
+    backgroundColor: `white`
   };
+
+  //  @media only screens and (max - width: `991px`) {
+    
+  // }
+
+  // const mobile = @media only screens and (max - width: `767px`) {
+    
+  // }
 
   return (
     <div>
