@@ -30,11 +30,11 @@ function Stats(props) {
     display: `flex`,
     flexDirection: `column`,
     marginTop: `50px`,
-    marginRight: `900px`
+    marginRight: `900px`,
   };
 
   return (
-    <div >
+    <div>
       <div style={style}>
         <h2 style={statStyle}>
           Dex <br />

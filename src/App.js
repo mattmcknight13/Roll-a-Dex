@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link, Route, Switch } from "react-router-dom";
 import Form from "./components/Form";
 import Sheet from "./components/Sheet";
@@ -35,12 +35,12 @@ function App(props) {
 
   // Triggers Get api call on first load
   // beleive this can be reomved as api call is actually being made by RandomButton.jsx through get random
-  // useEffect(() => {
-  //   makeApiCall();
-  //   return () => {
-  //     setNpc([]);
-  //   };
-  // }, []);
+  useEffect(() => {
+    return () => {
+      setNpc([]);
+      setNpcInfo({});
+    };
+  }, []);
 
   // create async function to make api call
   const makeApiCall = async () => {
@@ -113,16 +113,16 @@ function App(props) {
   };
 
   const body = {
-    display: 'flex',
-    flexDirection: 'column',
+    display: "flex",
+    flexDirection: "column",
     backgroundColor: "linen",
-    height: 'vh',
-    width: 'vw'
+    height: "vh",
+    width: "vw",
   };
   const headerStyle = {
     textAlign: "center",
-    display: 'flex',
-    flexDirection: 'column'
+    display: "flex",
+    flexDirection: "column",
   };
   const navStyle = {
     display: "flex",
@@ -150,12 +150,10 @@ function App(props) {
   };
 
   const mainStyle = {
-    display: 'flex',
-    flexDirection: 'column',
+    display: "flex",
+    flexDirection: "column",
     textAlign: "center",
   };
-
-  
 
   return (
     <div style={body}>
@@ -169,7 +167,6 @@ function App(props) {
             Random Npc
           </Link>
         </nav>
-        
       </header>
 
       <main style={mainStyle}>
@@ -196,7 +193,6 @@ function App(props) {
               npcInfo={npcInfo}
               getRandomNpc={makeApiCall}
               getStat={getStat}
-              setNpcInfo={props.setNpcInfo}
               clicked={clicked}
               setClicked={setClicked}
             />
