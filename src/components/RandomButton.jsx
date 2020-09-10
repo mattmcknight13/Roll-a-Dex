@@ -1,19 +1,23 @@
 import React from "react";
 
-const RandomButton = (props) => {
+function RandomButton(props) {
+  const { setClicked, clicked, getRandomNpc } = props;
+
+
+
   return (
     <div>
       {/* onclick button gets random npc */}
       <button
         onClick={() => {
-          props.setClicked(!props.clicked);
-          props.getRandomNpc();
+          setClicked(!clicked); //click for random button
+          getRandomNpc();
         }}
       >
         Generate a Random NPC
       </button>
     </div>
   );
-};
+}
 
 export default RandomButton;

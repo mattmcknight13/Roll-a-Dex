@@ -54,7 +54,7 @@ function Form(props) {
     setSex("");
     setDescription("");
     setHook("");
-    setClicked(!clicked);
+    setClicked(!clicked); //click for form button
   };
 //styling 
   const formStyle = {
