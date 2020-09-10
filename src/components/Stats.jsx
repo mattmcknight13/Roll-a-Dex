@@ -33,7 +33,6 @@ function Stats(props) {
   const senseStyle = {
     display: `flex`,
     flexDirection: `column`,
-    marginTop: `-30px`,
     marginLeft: `200px`,
     border: `solid black`,
     width: `200px`,

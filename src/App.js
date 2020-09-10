@@ -3,6 +3,7 @@ import { Link, Route, Switch } from "react-router-dom";
 import Form from "./components/Form";
 import GetNpc from "./components/GetNpc";
 import Stats from "./components/Stats";
+import Sheet from "./components/Sheet";
 import axios from "axios";
 
 function App(props) {
@@ -86,35 +87,32 @@ function App(props) {
     setNpcKeyValues(arr[i].fields);
     getStat();
   };
-  console.trace(makeApiCall);
 
   const body = {
     display: "flex",
     flexDirection: "column",
     backgroundColor: "#333",
     height: `100vh`,
-    padding: `30px`
-
-    // border: `solid rgb(69,59,53)`,
-    // borderWidth: 20,
+    padding: `30px`,
   };
 
   const paper = {
     backgroundColor: "#fff",
-    boxShadow: ` 0 1px 1px rgba(0,0,0,0.15),
-    0 10px 0 -5px #eee,
-    0 10px 1px -4px rgba(0,0,0,0.15),
-    0 20px 0 -10px #eee,
-    0 20px 1 px -9px rgba(0,0,0,0.15)`,
-    padding: `30px`
-    
-  }
+    // boxShadow: ` 0 1px 1px rgba(0,0,0,0.15),
+    // 0 10px 0 -5px #eee,
+    // 0 10px 1px -4px rgba(0,0,0,0.15),
+    // 0 20px 0 -10px #eee,
+    // 0 20px 1 px -9px rgba(0,0,0,0.15)`,
+    // padding: `30px`,
+    height: `100vh`,
+  };
 
   const headerStyle = {
     textAlign: "center",
     display: "flex",
     flexDirection: "column",
   };
+
   const navStyle = {
     display: "flex",
     flexFlow: "wrap",
@@ -141,47 +139,46 @@ function App(props) {
   return (
     <div style={body}>
       <div style={paper}>
-      <header style={headerStyle}>
-        <h1>Roll-a-Dex NPC Generator</h1>
-        <nav style={navStyle}>
-          <Link style={pageButtonStyle} to="/">
-            Create NPC
-          </Link>
-          <Link style={pageButtonStyle} to="/sheet">
-            Random Npc
-          </Link>
-        </nav>
-      </header>
-
-      <main style={mainStyle}>
-        <Switch>
-          <Route exact path="/">
-            <h2>Create a NPC</h2>
-            {/* pass down props/state to Form */}
-            <Form
-              onSubmit="/sheet"
-              npc={props.npc}
-              setNpc={props.setNpc}
-              setNpcKeyValues={setNpcKeyValues}
-              setClicked={setClicked}
-              clicked={clicked}
-            />
-          </Route>
-          <Route path="/sheet">
-            <Stats randomNumber={randomNumber} mod={mod} getStat={getStat} />
-            {/* pass down  props/state to GetNpc */}
-            <GetNpc
-              npc={npc}
-              npcKey={npcKey}
-              getRandomNpc={makeApiCall}
-              getStat={getStat}
-              clicked={clicked}
-              setClicked={setClicked}
-            />
-          </Route>
-        </Switch>
+        <header style={headerStyle}>
+          <h1>Roll-a-Dex NPC Generator</h1>
+          <nav style={navStyle}>
+            <Link style={pageButtonStyle} to="/">
+              Create NPC
+            </Link>
+            <Link style={pageButtonStyle} to="/sheet">
+              Random Npc
+            </Link>
+          </nav>
+        </header>
+        <main style={mainStyle}>
+          <Switch>
+            <Route exact path="/">
+              <h2>Create a NPC</h2>
+              {/* pass down props/state to Form */}
+              <Form
+                npc={props.npc}
+                setNpc={props.setNpc}
+                setNpcKeyValues={setNpcKeyValues}
+                setClicked={setClicked}
+                clicked={clicked}
+              />
+            </Route>
+            <Route path="/sheet">
+              <Sheet />
+              <Stats randomNumber={randomNumber} mod={mod} getStat={getStat} />
+              {/* pass down  props/state to GetNpc */}
+              <GetNpc
+                npc={npc}
+                npcKey={npcKey}
+                getRandomNpc={makeApiCall}
+                getStat={getStat}
+                clicked={clicked}
+                setClicked={setClicked}
+              />
+            </Route>
+          </Switch>
         </main>
-        </div>
+      </div>
     </div>
   );
 }

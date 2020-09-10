@@ -1,7 +1,7 @@
 import React from "react";
 
 function RandomButton(props) {
-  const { setClicked, clicked, getRandomNpc } = props;
+  const { setClicked, getRandomNpc } = props;
 
 
 
@@ -10,7 +10,9 @@ function RandomButton(props) {
       {/* onclick button gets random npc */}
       <button
         onClick={() => {
-          setClicked(!clicked); //click for random button
+          setClicked(prevClicked => {
+            return !prevClicked
+          }); //click for random button
           getRandomNpc();
         }}
       >

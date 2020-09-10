@@ -6,7 +6,7 @@ function Form(props) {
   //set useHistory hook to a variable name
   const history = useHistory();
   //destructure props object
-  const { setNpcKeyValues, setClicked, clicked } = props;
+  const { setNpcKeyValues, setClicked, } = props;
   // use states set current and append information to api
   const [name, setName] = useState("");
   const [race, setRace] = useState("");
@@ -28,7 +28,7 @@ function Form(props) {
       hook,
     };
     // onclick push to sheet page
-    history.push(`/sheet`);
+   
     // create varaible to assign api endpoint
     const airtableURL = `https://api.airtable.com/v0/${process.env.REACT_APP_AIRTABLE_BASE}/npc`;
     // make axios post call
@@ -54,8 +54,12 @@ function Form(props) {
     setSex("");
     setDescription("");
     setHook("");
-    setClicked(!clicked); //click for form button
+    setClicked(prevClicked =>  {
+      return !prevClicked
+    }); //click for form button
+    history.push(`/sheet`);
   };
+
 //styling 
   const formStyle = {
     margin: 20,
