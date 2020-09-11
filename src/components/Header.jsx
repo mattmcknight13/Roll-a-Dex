@@ -1,12 +1,16 @@
 import React from 'react';
-import "./Header.css"
 import Nav from "./Nav"
 
-function Header() {
+function Header(props) {
 
+  const headerStyle = {
+    textAlign: "center",
+    display: "flex",
+    flexDirection: "column",
+  };
   return (
     <div>
-       <header className="header">
+       <header style={headerStyle}>
           <h1>Roll-a-Dex NPC Generator</h1>
           <Nav />
         </header>
