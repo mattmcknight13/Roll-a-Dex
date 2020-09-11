@@ -99,7 +99,7 @@ function App(props) {
   return (
     <div className="body">
       <div className="paper">
-      <Header/>
+        <Header />
         <main style={mainStyle}>
           <Switch>
             <Route exact path="/">
