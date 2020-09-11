@@ -8,7 +8,6 @@ function Stats(props) {
 
   let intSense = mod.Int + 10;
 
-
   return (
     <div>
       <div className="style">

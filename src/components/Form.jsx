@@ -1,13 +1,13 @@
 import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
 import axios from "axios";
-import "./Form.css"
+import "./Form.css";
 
 function Form(props) {
   //set useHistory hook to a variable name
   const history = useHistory();
   //destructure props object
-  const { setNpcKeyValues, setClicked, } = props;
+  const { setNpcKeyValues, setClicked } = props;
   // use states set current and append information to api
   const [name, setName] = useState("");
   const [race, setRace] = useState("");
@@ -29,7 +29,7 @@ function Form(props) {
       hook,
     };
     // onclick push to sheet page
-   
+
     // create varaible to assign api endpoint
     const airtableURL = `https://api.airtable.com/v0/${process.env.REACT_APP_AIRTABLE_BASE}/npc`;
     // make axios post call
@@ -55,17 +55,11 @@ function Form(props) {
     setSex("");
     setDescription("");
     setHook("");
-    setClicked(prevClicked =>  {
-      return !prevClicked
+    setClicked((prevClicked) => {
+      return !prevClicked;
     }); //click for form button
     history.push(`/sheet`);
   };
-
-//styling 
-  // const formStyle = {
-  //   margin: 20,
-  
-  // };
 
   return (
     <div>
@@ -132,7 +126,7 @@ function Form(props) {
           ></input>
         </div>
         <div>
-          <button className type="submit">
+          <button  type="submit">
             Generate Created NPC
           </button>
         </div>

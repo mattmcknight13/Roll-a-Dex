@@ -8,7 +8,6 @@ const GetNpc = (props) => {
   // destructure props object
   const { npcKey, npc, getRandomNpc, getStat, clicked, setClicked } = props;
 
-
   return (
     <div className="npc-style">
       <>
@@ -43,5 +42,4 @@ const GetNpc = (props) => {
     </div>
   );
 };
-
 export default GetNpc;
