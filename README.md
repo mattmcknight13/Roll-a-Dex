@@ -179,24 +179,15 @@ Threats
 |  Day | Deliverable | Status
 |---|---| ---|
 |September 4| Project Approval | Complete
-|September 5| psuedo code design begin code structure | Incomplete
-|September 6| reach api, render api| Incomplete
-|September 7| append to api | Incomplete
-|September 8| begin break up into components, css| Incomplete
-|September 9|  css, Initial Clickable Model, MVP, Post MVP  | Incomplete
-|September 10|  PostMVP | Incomplete
+|September 5| psuedo code design begin code structure | Complete
+|September 6| reach api, render api| Complete
+|September 7| append to api | Complete
+|September 8| begin break up into components, css| Complete
+|September 9|  css, Initial Clickable Model, MVP, Post MVP  | Complete
+|September 10|  PostMVP | -
 |September 11| Presentations | Incomplete
 
-## Priority Matrix
 
-
-## Timeframes
-
-| Component | Priority | Estimated Time | Time Invested | Actual Time |
-| --- | :---: |  :---: | :---: | :---: |
-| Adding Form | H | 3hrs| 3.5hrs | 3.5hrs |
-| Working with API | H | 3hrs| 2.5hrs | 2.5hrs |
-| Total | H | 6hrs| 5hrs | 5hrs |
 
 ## Code Snippet
 
