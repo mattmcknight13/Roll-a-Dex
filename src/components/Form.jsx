@@ -28,7 +28,7 @@ function Form(props) {
       description,
       hook,
     };
-    // onclick push to sheet page
+   
 
     // create varaible to assign api endpoint
     const airtableURL = `https://api.airtable.com/v0/${process.env.REACT_APP_AIRTABLE_BASE}/npc`;
@@ -58,6 +58,7 @@ function Form(props) {
     setClicked((prevClicked) => {
       return !prevClicked;
     }); //click for form button
+    //onlick useHistory hook kicks in and redirects page to sheet
     history.push(`/sheet`);
   };
 
