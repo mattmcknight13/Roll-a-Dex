@@ -64,6 +64,7 @@ function Form(props) {
 //styling 
   // const formStyle = {
   //   margin: 20,
+  
   // };
 
   return (

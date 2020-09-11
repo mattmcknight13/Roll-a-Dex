@@ -98,7 +98,7 @@ function App(props) {
   };
 
   const paper = {
-    backgroundColor: "#fff",
+    backgroundColor: "linen",
     // boxShadow: ` 0 1px 1px rgba(0,0,0,0.15),
     // 0 10px 0 -5px #eee,
     // 0 10px 1px -4px rgba(0,0,0,0.15),
@@ -128,7 +128,7 @@ function App(props) {
     border: "solid 1px rgb(107,107,107)",
     background: "rgb(237,237,237)",
     textDecoration: "none",
-    marginTop: `40px`,
+    
   };
 
   const mainStyle = {
