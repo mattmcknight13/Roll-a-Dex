@@ -185,7 +185,7 @@ Threats
 |September 8| begin break up into components, css| Complete
 |September 9|  css, Initial Clickable Model, MVP, Post MVP  | Complete
 |September 10|  PostMVP | Incomplete
-|September 11| Presentations | Incomplete
+|September 11| Presentations | Complete
 
 
 
