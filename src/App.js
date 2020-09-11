@@ -4,9 +4,9 @@ import Form from "./components/Form";
 import GetNpc from "./components/GetNpc";
 import Stats from "./components/Stats";
 import Sheet from "./components/Sheet";
-import Nav from "./components/Nav"
+import Header from "./components/Header";
 import axios from "axios";
-import './App.css'
+import "./App.css";
 
 function App(props) {
   // set default useStates for my npc value and npc keys
@@ -90,16 +90,6 @@ function App(props) {
     getStat();
   };
 
- 
-
-  const headerStyle = {
-    textAlign: "center",
-    display: "flex",
-    flexDirection: "column",
-  };
-
- 
-
   const mainStyle = {
     display: "flex",
     flexDirection: "column",
@@ -109,10 +99,7 @@ function App(props) {
   return (
     <div className="body">
       <div className="paper">
-        <header style={headerStyle}>
-          <h1>Roll-a-Dex NPC Generator</h1>
-         <Nav/>
-        </header>
+      <Header/>
         <main style={mainStyle}>
           <Switch>
             <Route exact path="/">
