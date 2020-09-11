@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
 import axios from "axios";
+import "./Form.css"
 
 function Form(props) {
   //set useHistory hook to a variable name
@@ -61,9 +62,9 @@ function Form(props) {
   };
 
 //styling 
-  const formStyle = {
-    margin: 20,
-  };
+  // const formStyle = {
+  //   margin: 20,
+  // };
 
   return (
     <div>
@@ -71,7 +72,7 @@ function Form(props) {
       <form onSubmit={handleSubmit}>
         <div>
           <input
-            style={formStyle}
+            className="form"
             name="name"
             type="text"
             placeholder="Enter Name"
@@ -81,7 +82,7 @@ function Form(props) {
         </div>
         <div>
           <input
-            style={formStyle}
+            className="form"
             name="race"
             type="text"
             placeholder="Enter Race"
@@ -91,7 +92,7 @@ function Form(props) {
         </div>
         <div>
           <input
-            style={formStyle}
+            className="form"
             name="sex"
             type="text"
             placeholder="Enter Sex"
@@ -101,7 +102,7 @@ function Form(props) {
         </div>
         <div>
           <input
-            style={formStyle}
+            className="form"
             name="job"
             type="text"
             placeholder="Enter Job/Class"
@@ -111,7 +112,7 @@ function Form(props) {
         </div>
         <div>
           <input
-            style={formStyle}
+            className="form"
             name="description"
             type="text"
             placeholder="Enter Description"
@@ -121,7 +122,7 @@ function Form(props) {
         </div>
         <div>
           <input
-            style={formStyle}
+            className="form"
             name="hook"
             type="text"
             placeholder="Enter Story hook"
@@ -130,7 +131,7 @@ function Form(props) {
           ></input>
         </div>
         <div>
-          <button style={formStyle} type="submit">
+          <button className type="submit">
             Generate Created NPC
           </button>
         </div>

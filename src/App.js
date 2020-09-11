@@ -5,6 +5,7 @@ import GetNpc from "./components/GetNpc";
 import Stats from "./components/Stats";
 import Sheet from "./components/Sheet";
 import axios from "axios";
+import "./App.css"
 
 function App(props) {
   // set default useStates for my npc value and npc keys

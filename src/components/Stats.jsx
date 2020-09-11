@@ -1,4 +1,5 @@
 import React from "react";
+import "./Stats"
 
 function Stats(props) {
   const { randomNumber, mod } = props;
@@ -39,14 +40,7 @@ function Stats(props) {
     backgroundColor: `white`
   };
 
-  //  @media only screens and (max - width: `991px`) {
-    
-  // }
-
-  // const mobile = @media only screens and (max - width: `767px`) {
-    
-  // }
-
+ 
   return (
     <div>
       <div style={style}>
