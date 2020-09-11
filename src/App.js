@@ -1,9 +1,10 @@
 import React, { useState } from "react";
-import { Link, Route, Switch } from "react-router-dom";
+import { Route, Switch } from "react-router-dom";
 import Form from "./components/Form";
 import GetNpc from "./components/GetNpc";
 import Stats from "./components/Stats";
 import Sheet from "./components/Sheet";
+import Nav from "./components/Nav"
 import axios from "axios";
 import './App.css'
 
@@ -97,21 +98,7 @@ function App(props) {
     flexDirection: "column",
   };
 
-  const navStyle = {
-    display: "flex",
-    flexFlow: "wrap",
-    textAlign: "center",
-    justifyContent: "space-around",
-    textDecoration: "none",
-    textDexorationLine: "none",
-  };
-
-  const pageButtonStyle = {
-    color: "black",
-    border: "solid 1px rgb(107,107,107)",
-    background: "rgb(237,237,237)",
-    textDecoration: "none",
-  };
+ 
 
   const mainStyle = {
     display: "flex",
@@ -124,14 +111,7 @@ function App(props) {
       <div className="paper">
         <header style={headerStyle}>
           <h1>Roll-a-Dex NPC Generator</h1>
-          <nav style={navStyle}>
-            <Link style={pageButtonStyle} to="/">
-              Create NPC
-            </Link>
-            <Link style={pageButtonStyle} to="/sheet">
-              Random Npc
-            </Link>
-          </nav>
+         <Nav/>
         </header>
         <main style={mainStyle}>
           <Switch>
