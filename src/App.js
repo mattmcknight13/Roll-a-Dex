@@ -5,7 +5,6 @@ import GetNpc from "./components/GetNpc";
 import Stats from "./components/Stats";
 import Sheet from "./components/Sheet";
 import axios from "axios";
-import "./App.css"
 
 function App(props) {
   // set default useStates for my npc value and npc keys
@@ -99,12 +98,6 @@ function App(props) {
 
   const paper = {
     backgroundColor: "linen",
-    // boxShadow: ` 0 1px 1px rgba(0,0,0,0.15),
-    // 0 10px 0 -5px #eee,
-    // 0 10px 1px -4px rgba(0,0,0,0.15),
-    // 0 20px 0 -10px #eee,
-    // 0 20px 1 px -9px rgba(0,0,0,0.15)`,
-    // padding: `30px`,
     height: `100vh`,
   };
 
@@ -128,7 +121,6 @@ function App(props) {
     border: "solid 1px rgb(107,107,107)",
     background: "rgb(237,237,237)",
     textDecoration: "none",
-    
   };
 
   const mainStyle = {

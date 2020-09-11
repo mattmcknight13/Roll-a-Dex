@@ -1,17 +1,16 @@
 /* Stats.jsx */
 .style {
   display: flex;
-
   justify-content: center;
 }
 .box {
   border: solid black;
-  padding: 20px;
-  margin-right: 80px;
+  padding: 15px;
+  margin-right: -18px;
   background-color: white;
   justify-content: space-between;
   width: 10px;
-  font-size: 15px;
+  font-size: 12px;
   
 }
 
@@ -27,55 +26,57 @@
 .senses {
   display: flex;
   flex-direction: column;
-  margin-left: 100px;
+  margin-left: 5px;
   border: solid black;
-  width: 200px;
+  width:110px;
   background-color: white;
-}
-
-
-.bar {
-  background-color: black;
-  height:px;
-  width: 100px
-}
-
-@media only screen and (min-width: 766px) {
-}
-.senses {
-  width: 100px
 }
 .sense {
   font-size: 10px;
 }
 
+.bar {
+  background-color: black;
+  height:px;
+  width: 100px;
+}
+
+@media only screen and (min-width: 766px) {
+
+.senses {
+  width: 200px;
+  margin-left: 90px;
+  
+}
+.sense {
+  font-size: 20px;
+}
+}
 @media only screen and (min-width: 1075px) {
   
 
   .box {
-  
     padding: 20px;
-    /* margin-right: 80px */
     margin-left: 20px;
     justify-content: space-between;
     width: 60px;
-    font-size: 25px;
+    font-size: 15px;
   }
     .mod {
       
       border-radius: 50%;
-      
       margin-top: -10px;
       height: 20px;
       width: 40px;
     }
     
-  }
+  
   .senses {
-    width: 300px
+    width: 300px;
+    margin-left: 90px;
   }
 
   .sense {
-    font-size: 30px;
+    font-size: 13px;
   }
-
+}
