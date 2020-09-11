@@ -1,0 +1,11 @@
+.body {
+  display: flex;
+  flex-direction: column;
+  background-color: #333;
+  height: 100vh;
+  padding: 30px;
+}
+.paper {
+  background-color:linen;
+  height: 100vh;
+};

@@ -5,6 +5,7 @@ import GetNpc from "./components/GetNpc";
 import Stats from "./components/Stats";
 import Sheet from "./components/Sheet";
 import axios from "axios";
+import './App.css'
 
 function App(props) {
   // set default useStates for my npc value and npc keys
@@ -88,18 +89,7 @@ function App(props) {
     getStat();
   };
 
-  const body = {
-    display: "flex",
-    flexDirection: "column",
-    backgroundColor: "#333",
-    height: `100vh`,
-    padding: `30px`,
-  };
-
-  const paper = {
-    backgroundColor: "linen",
-    height: `100vh`,
-  };
+ 
 
   const headerStyle = {
     textAlign: "center",
@@ -130,8 +120,8 @@ function App(props) {
   };
 
   return (
-    <div style={body}>
-      <div style={paper}>
+    <div className="body">
+      <div className="paper">
         <header style={headerStyle}>
           <h1>Roll-a-Dex NPC Generator</h1>
           <nav style={navStyle}>
