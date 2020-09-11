@@ -57,3 +57,7 @@ Behind Scenes for Create a NPC page
 - Save created or generated NPCs to local storage so people can keep them
 - Default images based on sex, class/job, race (to add more styling to page)
 - Add simple or Detailed NPC generator to limit info needed
+
+
+-change api call object handling to object. entries to keep key value pairs together till render
+-

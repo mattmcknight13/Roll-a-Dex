@@ -130,7 +130,7 @@ table will be NPC and has a series of prebuilt characters currently which with a
 
 - Create a form to Manually create a  NPC character do display and append to api
 
-- have Game Stats (Dex,Con,Int) randomly generated and/ or randomly applied using Standard array of Stats [15,14,13,12,10,8] have proper Modifiers applied
+- have Game Stats (Dex,Con,Int) randomly generated and have proper Modifiers applied
 
 - Once a Character is made through either means, generate data on a stylised character sheet on page
 
@@ -184,7 +184,7 @@ Threats
 |September 7| append to api | Complete
 |September 8| begin break up into components, css| Complete
 |September 9|  css, Initial Clickable Model, MVP, Post MVP  | Complete
-|September 10|  PostMVP | -
+|September 10|  PostMVP | Incomplete
 |September 11| Presentations | Incomplete
 
 
@@ -193,11 +193,28 @@ Threats
 
 Use this section to include a brief code snippet of functionality that you are proud of and a brief description.  
 
+//this ternary takes in oneside my api call for a randomly selected character and places class name and value into spots,
+hardcoded section is the rendering location for when you fill out the create a npc form and toggles away the random button so you can display in its place
+
 ```
-function reverse(string) {
-	// here is the code to reverse a string of text
-}
+     {!clicked ? (
+          npc.map((n, idx) => (
+            <p className={npcKey[idx]} key={idx}>
+              {npcKey[idx]}: {n}
+            </p>
+          ))
+        ) : (
+          <div>
+            {/* render h2 tags where clasname is specfic index of array and value is of same index from different array */}
+            <p className={npcKey[0]}>name: {npc[0]} </p>
+            <p className={npcKey[1]}>race: {npc[1]} </p>
+            <p className={npcKey[2]}>job: {npc[2]}</p>
+            <p className={npcKey[3]}>description: {npc[3]}</p>
+            <p className={npcKey[4]}>hook:{npc[4]}</p>
+            <p className={npcKey[5]}>sex: {npc[5]}</p>
+          </div>
+        )}
 ```
 
 ## Change Log
- - Had to change Generate random NPC button into a link, that triggers on click
+ 
