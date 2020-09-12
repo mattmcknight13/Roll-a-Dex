@@ -6,11 +6,24 @@
   margin-top: 30px;
 }
 
-.description,
+.person {
+  display: flex;
+  justify-content: center;
+}
+
 .name,
 .hook,
 .race,
-.sex,
+.sex {
+  font-size: 10px;
+  margin-left: 10px;
+}
+
+.rp{
+
+}
+
+.description,
 .job {
   word-wrap: break-word;
   font-size: 14px;
@@ -24,13 +37,12 @@
   }
 
   .description,
-  .name,
-  .hook,
-  .race,
-  .sex,
-  .job {
+  
+  .hook
+ {
     font-size: 20px;
-  }
+  
+}
 }
 
 @media only screen and (min-width: 1075px) {
@@ -38,4 +50,5 @@
     margin-top: -40px;
     margin-left: 200px;
   }
+
 }

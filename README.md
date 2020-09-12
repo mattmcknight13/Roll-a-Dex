@@ -206,12 +206,12 @@ hardcoded section is the rendering location for when you fill out the create a n
         ) : (
           <div>
             {/* render h2 tags where clasname is specfic index of array and value is of same index from different array */}
-            <p className={npcKey[0]}>name: {npc[0]} </p>
-            <p className={npcKey[1]}>race: {npc[1]} </p>
-            <p className={npcKey[2]}>job: {npc[2]}</p>
-            <p className={npcKey[3]}>description: {npc[3]}</p>
-            <p className={npcKey[4]}>hook:{npc[4]}</p>
-            <p className={npcKey[5]}>sex: {npc[5]}</p>
+            <p className={npc[0]}>name: {npc[0]} </p>
+            <p className={npc[1]}>race: {npc[1]} </p>
+            <p className={npc[2]}>job: {npc[2]}</p>
+            <p className={npc[3]}>description: {npc[3]}</p>
+            <p className={npc[4]}>hook:{npc[4]}</p>
+            <p className={npc[5]}>sex: {npc[5]}</p>
           </div>
         )}
 ```

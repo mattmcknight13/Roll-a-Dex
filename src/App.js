@@ -11,7 +11,6 @@ import "./App.css";
 function App(props) {
   // set default useStates for my npc value and npc keys
   const [npc, setNpc] = useState([]);
-  const [npcKey, setNpcKey] = useState([]);
 
   //set randomNumber state to object
   const [randomNumber, setRandomNumber] = useState({
@@ -67,8 +66,8 @@ function App(props) {
     });
   };
   const setNpcKeyValues = (fields) => {
-    setNpcKey(Object.keys(fields));
-    setNpc(Object.values(fields));
+    let fieldsArray = Object.entries(fields);
+    setNpc(fieldsArray);
   };
   // create async function to make api call
   const makeApiCall = async () => {
@@ -119,7 +118,6 @@ function App(props) {
               {/* pass down  props/state to GetNpc */}
               <GetNpc
                 npc={npc}
-                npcKey={npcKey}
                 getRandomNpc={makeApiCall}
                 getStat={getStat}
                 clicked={clicked}

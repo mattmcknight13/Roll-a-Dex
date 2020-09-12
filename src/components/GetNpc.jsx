@@ -6,7 +6,7 @@ import "./GetNpc.css";
 // initate GetNpc function
 const GetNpc = (props) => {
   // destructure props object
-  const { npcKey, npc, getRandomNpc, getStat, clicked, setClicked } = props;
+  const { npc, getRandomNpc, getStat, clicked, setClicked } = props;
 
   return (
     <div className="npc-style">
@@ -21,23 +21,19 @@ const GetNpc = (props) => {
 
         {/* onClick clicked state changes between true and false triggering form render or randombutton */}
         {/* map through selected object to give key values to be classname, and assign values to approriate h2 tag */}
-        {!clicked ? (
-          npc.map((n, idx) => (
-            <p className={npcKey[idx]} key={idx}>
-              {npcKey[idx]}: {n}
-            </p>
-          ))
-        ) : (
-          <div>
-            {/* render h2 tags where clasname is specfic index of array and value is of same index from different array */}
-            <p className={npcKey[0]}>name: {npc[0]} </p>
-            <p className={npcKey[1]}>race: {npc[1]} </p>
-            <p className={npcKey[2]}>job: {npc[2]}</p>
-            <p className={npcKey[3]}>description: {npc[3]}</p>
-            <p className={npcKey[4]}>hook:{npc[4]}</p>
-            <p className={npcKey[5]}>sex: {npc[5]}</p>
+        <div>
+          {/* render h2 tags where clasname is specfic index of array and value is of same index from different array */}
+          <div className="person">
+            <p className={npc[0]}> {npc[0]}</p>
+            <p className={npc[1]}> {npc[1]}</p>
+            <p className={npc[5]}> {npc[5]}</p>
+            <p className={npc[2]}> {npc[2]}</p>
           </div>
-        )}
+          <div className="rp">
+            <p className={npc[3]}> {npc[3]}</p>
+            <p className={npc[4]}> {npc[4]}</p>
+          </div>
+        </div>
       </>
     </div>
   );
