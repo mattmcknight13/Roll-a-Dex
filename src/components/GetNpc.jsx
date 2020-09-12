@@ -7,7 +7,7 @@ import "./GetNpc.css";
 const GetNpc = (props) => {
   // destructure props object
   const { npc, getRandomNpc, getStat, clicked, setClicked } = props;
-console.log(npc)
+// console.log(npc)
   return (
     <div className="npc-style">
       <>
