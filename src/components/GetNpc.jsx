@@ -7,12 +7,12 @@ import "./GetNpc.css";
 const GetNpc = (props) => {
   // destructure props object
   const { npc, getRandomNpc, getStat, clicked, setClicked } = props;
-
+console.log(npc)
   return (
     <div className="npc-style">
       <>
         {/* have button trigger api call on click */}
-        <RandomButton
+        <RandomButton 
           getRandomNpc={getRandomNpc}
           getStat={getStat}
           setClicked={setClicked}
@@ -39,3 +39,18 @@ const GetNpc = (props) => {
   );
 };
 export default GetNpc;
+
+
+// CURRENT GOALS 
+// - get the npc array of array's split to apply approriate key and values to p tags to render properly
+// - merge or sort form data so when either renders has same look as of now it changes slightly based on the object
+// - style the hell out of this site
+
+
+
+// LATER POST MVP'S
+// - form protections, no empty spots added to api, try to find a good mix of protections to stop duplicate entries
+// - add local storage to save npc or a pdf download option
+// - add copyright default images based on race/sex/class combination or color change of screen or something fun
+// - try to find a funner ui experience for form
+// - add Icon images

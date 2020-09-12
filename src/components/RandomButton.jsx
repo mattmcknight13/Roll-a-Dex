@@ -1,5 +1,6 @@
 import React from "react";
 
+
 function RandomButton(props) {
   const { setClicked, getRandomNpc } = props;
 
