@@ -8,16 +8,18 @@
 
 .person {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-content: space-between;
-  /* width: 100px */
+  width: 300px;
+  margin-left: 300px;
 }
 
 .name,
-.hook,
+.job
 .race,
 .sex {
-  font-size: 5px;
+  
+  font-size: 15px;
 }
 
 /* .rp{
@@ -25,7 +27,7 @@
 } */
 
 .description,
-.job {
+.hook {
   word-wrap: break-word;
   font-size: 5px;
 }
