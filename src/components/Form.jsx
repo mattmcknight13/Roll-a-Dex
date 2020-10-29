@@ -28,7 +28,6 @@ function Form(props) {
       description,
       hook,
     };
-   
 
     // create varaible to assign api endpoint
     const airtableURL = `https://api.airtable.com/v0/${process.env.REACT_APP_AIRTABLE_BASE}/npc`;
@@ -63,73 +62,83 @@ function Form(props) {
   };
 
   return (
-    <div>
+    <div className='form-page'>
       {/* trigger handleSubmit function */}
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit} className='form'>
         <div>
-          <input
-            className="form"
-            name="name"
-            type="text"
-            placeholder="Enter Name"
-            value={name}
-            onChange={(e) => setName(e.target.value)}
-          ></input>
+          <label>
+            <input
+              className="form"
+              name="name"
+              type="text"
+              placeholder="Enter Name"
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+            ></input>
+          </label>
         </div>
         <div>
-          <input
-            className="form"
-            name="race"
-            type="text"
-            placeholder="Enter Race"
-            value={race}
-            onChange={(e) => setRace(e.target.value)}
-          ></input>
+          <label>
+            <input
+              className="form"
+              name="race"
+              type="text"
+              placeholder="Enter Race"
+              value={race}
+              onChange={(e) => setRace(e.target.value)}
+            ></input>
+          </label>
         </div>
         <div>
-          <input
-            className="form"
-            name="sex"
-            type="text"
-            placeholder="Enter Sex"
-            value={sex}
-            onChange={(e) => setSex(e.target.value)}
-          ></input>
+          <label>
+            <input
+              className="form"
+              name="sex"
+              type="text"
+              placeholder="Enter Sex"
+              value={sex}
+              onChange={(e) => setSex(e.target.value)}
+            ></input>
+          </label>
         </div>
         <div>
-          <input
-            className="form"
-            name="job"
-            type="text"
-            placeholder="Enter Job/Class"
-            value={job}
-            onChange={(e) => setJob(e.target.value)}
-          ></input>
+          <label>
+            <input
+              className="form"
+              name="job"
+              type="text"
+              placeholder="Enter Job/Class"
+              value={job}
+              onChange={(e) => setJob(e.target.value)}
+            ></input>
+          </label>
         </div>
         <div>
-          <input
-            className="form"
-            name="description"
-            type="text"
-            placeholder="Enter Description"
-            value={description}
-            onChange={(e) => setDescription(e.target.value)}
-          ></input>
+          <label>
+            <input
+              className="form"
+              name="description"
+              type="text"
+              placeholder="Enter Description"
+              value={description}
+              onChange={(e) => setDescription(e.target.value)}
+            ></input>
+          </label>
         </div>
         <div>
-          <input
-            className="form"
-            name="hook"
-            type="text"
-            placeholder="Enter Story hook"
-            value={hook}
-            onChange={(e) => setHook(e.target.value)}
-          ></input>
+          <label>
+            <input
+              className="form"
+              name="hook"
+              type="text"
+              placeholder="Enter Story hook"
+              value={hook}
+              onChange={(e) => setHook(e.target.value)}
+            ></input>
+          </label>
         </div>
         <div>
-          <button  type="submit">
-            Generate Created NPC
-          </button>
+          <button type="submit">Generate Created NPC</button>
         </div>
       </form>
     </div>
