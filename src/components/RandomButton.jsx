@@ -1,4 +1,6 @@
 import React from "react";
+import './RandomButton.css'
+
 
 
 function RandomButton(props) {
@@ -10,6 +12,7 @@ function RandomButton(props) {
     <div>
       {/* onclick button gets random npc */}
       <button
+        className="random-btn"
         onClick={() => {
           setClicked(prevClicked => {
             return !prevClicked

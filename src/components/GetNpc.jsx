@@ -33,7 +33,7 @@ const GetNpc = (props) => {
                 <p className="job"> Occupation {npc.job}</p>
               </div>
               <div className="rp">
-                <p className="decription"> Description: {npc.description}</p>
+                <p className="description"> Description: {npc.description}</p>
                 <p className="hook"> Story Hook: {npc.hook}</p>
               </div>
             </div>

@@ -1,0 +1,14 @@
+.random-btn {
+  width: 100px;
+}
+
+
+@media only screen and (min-width: 600px) {
+.random-btn{
+  width: 200px;
+}
+}
+
+@media only screen and (min-width: 1075px) {
+
+}

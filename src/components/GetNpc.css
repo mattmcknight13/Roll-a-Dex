@@ -4,7 +4,11 @@
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
+  margin-left: 150px;
+  margin-top: -150px;
+  
 }
+
 
 .npc-info {
   border: solid black;
@@ -13,33 +17,31 @@
   background-color: white;
   justify-content: space-between;
   font-size: 12px;
-  
+  width: 100px;
 }
 
 .name,
 .job,
 .race,
-.sex { 
+.sex,
+.description,
+.hook { 
   font-size: 15px;
 }
 
-.description,
-.hook {
-  word-wrap: break-word;
-  font-size: 5px;
-}
 
 @media only screen and (min-width: 600px) {
   .get-npc-page{
-    margin-top: -200px;
+    margin-top: -280px;
     margin-left: 300px;
     overflow: hidden;
   }
 
-  .description,
-  .hook {
-    font-size: 20px;
+  .npc-info {
+    width: 200px;
   }
+
+  
 }
 
 @media only screen and (min-width: 1075px) {
