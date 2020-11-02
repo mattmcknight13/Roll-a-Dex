@@ -1,9 +1,7 @@
- .nav  {
+.nav {
   display: flex;
-  flex-flow: wrap;
   text-align: center;
   justify-content: space-evenly;
   text-decoration: none;
   text-decoration-line: none;
-
-};
+}
