@@ -9,7 +9,7 @@ function Nav() {
     border: "solid 1px rgb(107,107,107)",
     background: "rgb(237,237,237)",
     textDecoration: "none",
-    justifyContent: "spaceBetween"
+    justifyContent: "spaceEvenly"
   };
 
   return (
