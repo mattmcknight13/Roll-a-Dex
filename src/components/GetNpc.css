@@ -1,30 +1,27 @@
-/* GetNpc.jsx */
-.npc-style {
+
+.get-npc-page{
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  /* margin-top: 30px; */
+  align-items: center;
 }
 
-.person {
-  display: flex;
-  justify-content: space-between;
-  align-content: space-between;
+.npc-info {
+  border: solid black;
+  padding: 15px;
   width: 300px;
-  margin-left: 300px;
+  background-color: white;
+  justify-content: space-between;
+  font-size: 12px;
+  
 }
 
 .name,
-.job
+.job,
 .race,
-.sex {
-  
+.sex { 
   font-size: 15px;
 }
-
-/* .rp{
-
-} */
 
 .description,
 .hook {
@@ -33,7 +30,7 @@
 }
 
 @media only screen and (min-width: 600px) {
-  .npc-style {
+  .get-npc-page{
     margin-top: -200px;
     margin-left: 300px;
     overflow: hidden;
@@ -46,7 +43,7 @@
 }
 
 @media only screen and (min-width: 1075px) {
-  .npc-style {
+  .get-npc-page{
     margin-top: -140px;
     margin-left: 240px;
   }

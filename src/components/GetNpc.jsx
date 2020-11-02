@@ -9,7 +9,7 @@ const GetNpc = (props) => {
   const { npc, getRandomNpc, getStat, clicked, setClicked } = props;
 
   return (
-    <div className="npc-style">
+    <div className="get-npc-page">
       <>
         {/* have button trigger api call on click */}
         <RandomButton
@@ -22,21 +22,21 @@ const GetNpc = (props) => {
         {/* onClick clicked state changes between true and false triggering form render or randombutton */}
         {/* map through selected object to give key values to be classname, and assign values to approriate h2 tag */}
 
-        <div>
+        <div >
           {/* render h2 tags where clasname is specfic index of array and value is of same index from different array */}
           {npc && (
-            <>
+            <div className='npc-info'>
               <div className="person">
-                <p className="name">{npc.name}</p>
-                <p className="race"> {npc.race}</p>
-                <p className="sex"> {npc.sex}</p>
-                <p className="job"> {npc.job}</p>
+                <p className="name"> Name: {npc.name}</p>
+                <p className="race"> Race: {npc.race}</p>
+                <p className="sex"> Sex: {npc.sex}</p>
+                <p className="job"> Occupation {npc.job}</p>
               </div>
               <div className="rp">
-                <p className="decription"> {npc.description}</p>
-                <p className="hook"> {npc.hook}</p>
+                <p className="decription"> Description: {npc.description}</p>
+                <p className="hook"> Story Hook: {npc.hook}</p>
               </div>
-            </>
+            </div>
           )}
         </div>
       </>

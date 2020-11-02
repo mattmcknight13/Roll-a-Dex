@@ -96,7 +96,7 @@ function App(props) {
   };
 
   return (
-    <div className="body">
+    <div className="app">
       <div className="paper">
         <Header />
         <main style={mainStyle}>
